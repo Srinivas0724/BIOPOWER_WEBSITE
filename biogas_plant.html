@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WONDERBIN Portable Biogas Plants | BIOPOWER Engineering</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* ── Page-specific styles ── */
+        .bp-section {
+            padding: 60px 0;
+        }
+
+        .bp-section-title {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .bp-section-sub {
+            color: var(--gray-400);
+            font-size: 15px;
+            margin-bottom: 40px;
+            max-width: 650px;
+        }
+
+        /* ── Stat strip ── */
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-strip-item {
+            text-align: center;
+        }
+
+        .stat-strip-item .num {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-strip-item .lbl {
+            font-size: 12px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ── How it works flowchart ── */
+        .flow-section {
+            padding: 60px 0;
+            background: var(--darker-bg);
+            overflow: hidden;
+            /* FIX: prevents horizontal scrollbar / moving line */
+        }
+
+        .flow-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 50px;
+            flex-wrap: nowrap;
+        }
+
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .flow-icon {
+            width: 120px;
+            /* FIX: enlarged from 70px */
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 52px;
+            /* FIX: larger emoji */
+            box-shadow: 0 0 30px rgba(0, 102, 204, 0.4);
+            flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .flow-icon:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 50px rgba(0, 102, 204, 0.6);
+        }
+
+        .flow-label {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .flow-sublabel {
+            font-size: 12px;
+            color: var(--gray-500);
+            text-align: center;
+            margin-top: 6px;
+        }
+
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 40px;
+            /* aligns arrow with icon center */
+            color: var(--primary-blue);
+            font-size: 32px;
+            font-weight: 300;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .flow-steps {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .flow-arrow {
+                display: none;
+            }
+
+            .flow-step {
+                max-width: 140px;
+            }
+
+            .flow-icon {
+                width: 90px;
+                height: 90px;
+                font-size: 38px;
+            }
+        }
+
+        /* ── Product type cards ── */
+        .type-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-bottom: 60px;
+        }
+
+        .type-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 24px;
+            padding: 36px;
+            transition: all 0.3s ease;
+        }
+
+        .type-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 30px rgba(0, 102, 204, 0.2);
+            transform: translateY(-6px);
+        }
+
+        .type-card .tc-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .type-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .type-card p {
+            color: var(--gray-400);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .type-card .tc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tc-tag {
+            background: rgba(0, 102, 204, 0.12);
+            color: var(--primary-blue);
+            border: 1px solid rgba(0, 102, 204, 0.25);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Spec table ── */
+        .spec-table-wrap {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            margin-bottom: 40px;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .spec-table thead tr {
+            background: linear-gradient(90deg, var(--primary-blue), #004fa3);
+        }
+
+        .spec-table thead th {
+            padding: 14px 16px;
+            color: var(--white);
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--card-bg);
+            transition: background 0.2s;
+        }
+
+        .spec-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .spec-table tbody tr:hover {
+            background: rgba(0, 102, 204, 0.07);
+        }
+
+        .spec-table td {
+            padding: 12px 16px;
+            color: var(--gray-300);
+            text-align: center;
+        }
+
+        .spec-table td:first-child {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .spec-table .yes {
+            color: #4ade80;
+            font-weight: 600;
+        }
+
+        .spec-table .no {
+            color: var(--gray-500);
+        }
+
+        /* ── Benefits grid ── */
+        .benefits-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .benefit-tile {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px 20px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-tile:hover {
+            border-color: var(--primary-blue);
+            background: rgba(0, 102, 204, 0.06);
+        }
+
+        .benefit-tile .bt-icon {
+            font-size: 26px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .benefit-tile h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .benefit-tile p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+
+        /* ── Input boxes grid ── */
+        .inputs-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin: 30px 0;
+        }
+
+        .input-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 28px 16px 22px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .input-box:hover {
+            border-color: var(--primary-blue);
+            background: rgba(0, 102, 204, 0.07);
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(0, 102, 204, 0.2);
+        }
+
+        .input-box .ib-img {
+            font-size: 52px;
+            margin-bottom: 14px;
+            display: block;
+            line-height: 1;
+        }
+
+        .input-box .ib-pct {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .input-box .ib-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .input-box .ib-sub {
+            font-size: 11px;
+            color: var(--gray-500);
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Percentage bar inside box */
+        .input-box .ib-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 4px;
+            margin-top: 14px;
+            overflow: hidden;
+        }
+
+        .input-box .ib-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+        }
+
+        @media (max-width: 992px) {
+            .inputs-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .inputs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ── Output cards ── */
+        .output-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .output-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .output-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-4px);
+        }
+
+        .output-card .oc-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .output-card .oc-value {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .output-card .oc-unit {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-top: 2px;
+        }
+
+        .output-card .oc-label {
+            font-size: 13px;
+            color: var(--gray-300);
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stat-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .type-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .output-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study {
+                padding: 24px 20px;
+            }
+
+        }
+
+        /* ═══════════════════════════════════
+           3D GALLERY SECTION
+           ═══════════════════════════════════ */
+
+        .gallery-section-3d {
+            padding: 80px 0;
+        }
+
+        /* === Model Tab Bar === */
+        .model-tabs-3d {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .model-tab-3d {
+            padding: 11px 22px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: transparent;
+            color: var(--gray-400);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .model-tab-3d:hover {
+            border-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .model-tab-3d.active {
+            background: linear-gradient(90deg, var(--primary-blue), #004fa3);
+            border-color: transparent;
+            color: var(--white);
+            box-shadow: 0 0 24px rgba(0, 102, 204, 0.4);
+        }
+
+        /* === Panel === */
+        .model-panel-3d {
+            display: none;
+        }
+
+        .model-panel-3d.active {
+            display: block;
+        }
+
+        .panel-meta {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+
+        .panel-meta h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .panel-meta p {
+            font-size: 14px;
+            color: var(--gray-400);
+            line-height: 1.6;
+            max-width: 520px;
+        }
+
+        .panel-badge-3d {
+            background: rgba(0, 102, 204, 0.12);
+            color: var(--primary-blue);
+            border: 1px solid rgba(0, 102, 204, 0.3);
+            border-radius: 8px;
+            padding: 7px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* === 3D Stage === */
+        .gallery-3d-stage {
+            perspective: 1200px;
+            perspective-origin: 50% 50%;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        /* Spotlight glow behind active card */
+        .gallery-3d-stage::before {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 300px;
+            background: radial-gradient(ellipse, rgba(0, 102, 204, 0.18) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: spotlightPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes spotlightPulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: translateX(-50%) scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.15);
+            }
+        }
+
+        /* Carousel track */
+        .carousel-track {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            padding: 40px 0 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* === Image Cards with 3D === */
+        .img-card-3d {
+            flex-shrink: 0;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-style: preserve-3d;
+        }
+
+        /* Side cards */
+        .img-card-3d.side-left {
+            width: 220px;
+            height: 200px;
+            transform: perspective(1000px) rotateY(30deg) translateX(20px) scale(0.82);
+            opacity: 0.55;
+            filter: brightness(0.65) blur(1px);
+            z-index: 1;
+        }
+
+        .img-card-3d.side-right {
+            width: 220px;
+            height: 200px;
+            transform: perspective(1000px) rotateY(-30deg) translateX(-20px) scale(0.82);
+            opacity: 0.55;
+            filter: brightness(0.65) blur(1px);
+            z-index: 1;
+        }
+
+        /* Far side cards */
+        .img-card-3d.far-left {
+            width: 160px;
+            height: 150px;
+            transform: perspective(1000px) rotateY(50deg) translateX(40px) scale(0.65);
+            opacity: 0.3;
+            filter: brightness(0.4) blur(2px);
+            z-index: 0;
+        }
+
+        .img-card-3d.far-right {
+            width: 160px;
+            height: 150px;
+            transform: perspective(1000px) rotateY(-50deg) translateX(-40px) scale(0.65);
+            opacity: 0.3;
+            filter: brightness(0.4) blur(2px);
+            z-index: 0;
+        }
+
+        /* Center / active card */
+        .img-card-3d.center {
+            width: 520px;
+            height: 380px;
+            transform: perspective(1000px) rotateY(0deg) scale(1);
+            opacity: 1;
+            filter: brightness(1) blur(0);
+            z-index: 10;
+            animation: floatCard 5s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+
+            0%,
+            100% {
+                transform: perspective(1000px) rotateY(0deg) translateY(0px) scale(1);
+            }
+
+            50% {
+                transform: perspective(1000px) rotateY(0deg) translateY(-10px) scale(1);
+            }
+        }
+
+        /* Inner image wrapper — holds the card face */
+        .img-card-3d .card-face {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: #0d0d0d;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            transform-style: preserve-3d;
+        }
+
+        .img-card-3d.center .card-face {
+            border-color: rgba(0, 102, 204, 0.5);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 102, 204, 0.25);
+        }
+
+        .img-card-3d .card-face img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.5s ease;
+            background: #0d0d0d;
+        }
+
+        .img-card-3d.center:hover .card-face img {
+            transform: scale(1.04);
+        }
+
+        /* Shine overlay on center card */
+        .img-card-3d.center .card-face::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.07) 0%,
+                    transparent 50%,
+                    rgba(0, 102, 204, 0.04) 100%);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        /* Caption on center card */
+        .img-card-3d.center .card-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px 20px 18px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-200);
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* Nav arrow buttons */
+        .carousel-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .carousel-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--white);
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.4);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--primary-blue);
+            width: 24px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
+        }
+
+        /* === Lightbox === */
+        .lb-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.94);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .lb-overlay.open {
+            display: flex;
+        }
+
+        .lb-inner {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            animation: lbIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes lbIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .lb-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .lb-close {
+            position: absolute;
+            top: -44px;
+            right: 0;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: white;
+            font-size: 22px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .lb-close:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* Thumbnail strip below carousel */
+        .thumb-strip-3d {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .thumb-3d {
+            width: 72px;
+            height: 54px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            background: #111;
+            transform: translateY(0);
+        }
+
+        .thumb-3d img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .thumb-3d:hover {
+            border-color: rgba(0, 102, 204, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .thumb-3d.active {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 12px rgba(0, 102, 204, 0.4);
+            transform: translateY(-4px);
+        }
+
+        @media (max-width: 900px) {
+            .img-card-3d.center {
+                width: 320px;
+                height: 240px;
+            }
+
+            .img-card-3d.side-left,
+            .img-card-3d.side-right {
+                width: 140px;
+                height: 120px;
+            }
+
+            .img-card-3d.far-left,
+            .img-card-3d.far-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .img-card-3d.center {
+                width: calc(100vw - 60px);
+                height: 240px;
+            }
+
+            .img-card-3d.side-left,
+            .img-card-3d.side-right {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        function removePreloader() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader && !preloader.classList.contains('hidden')) {
+                preloader.classList.add('hidden');
+                setTimeout(() => { preloader.style.display = 'none'; }, 1000);
+            }
+        }
+        window.addEventListener('load', () => { setTimeout(removePreloader, 1500); });
+        setTimeout(removePreloader, 2500);
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 1000, once: true });
+            }
+            // FAILSAFE: If AOS fails to init, make all AOS elements visible
+            setTimeout(() => {
+                document.querySelectorAll('[data-aos]').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }, 3000);
+        });
+    </script>
+</head>
+
+<body class="biogas-detail-page">
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo magnetic">
+                    <img src="images/biopower-logo.png" alt="BioPower Logo" class="logo-img">
+                </a>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link magnetic" data-text="Home">Home</a></li>
+                        <li><a href="about.html" class="nav-link magnetic" data-text="About">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link magnetic" data-text="Products">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="biogas_plant.html">Portable Biogas Plants</a></li>
+                                <li><a href="inst_comun.html">Institutional Biogas Plants</a></li>
+                                <li><a href="cbg.html">CBG Plants</a></li>
+                                <li><a href="owc.html">Composting Machines</a></li>
+                                <li><a href="stp.html">STP / ETP Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://synodmart.com" class="nav-link magnetic" data-text="Shop">Shop</a></li>
+                        <li><a href="index.html#faqs" class="nav-link magnetic" data-text="FAQs">FAQs</a></li>
+                        <li><a href="contact.html" class="nav-link magnetic" data-text="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary magnetic">Request Quote</a>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="biogas-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="section-title"><span class="gradient-text">WONDERBIN</span> - Portable Biogas Plants</h1>
+                <p class="section-desc">Convert daily kitchen and organic waste into clean cooking gas and liquid
+                    fertilizer with compact, ready-to-install anaerobic digestion systems for homes, communities,
+                    canteens, hotels, hospitals, and institutions.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container content-wrapper">
+
+        <!-- ── Quick Stats ── -->
+        <div class="stat-strip">
+            <div class="stat-strip-item">
+                <div class="num">25 <span style="font-size:18px">yrs</span></div>
+                <div class="lbl">Product Lifespan</div>
+            </div>
+            <div class="stat-strip-item">
+                <div class="num">1–30 <span style="font-size:18px">m³</span></div>
+                <div class="lbl">Published Model Range</div>
+            </div>
+            <div class="stat-strip-item">
+                <div class="num">3–200 <span style="font-size:18px">kg</span></div>
+                <div class="lbl">Daily Waste Loading</div>
+            </div>
+            <div class="stat-strip-item">
+                <div class="num">300 g–50 <span style="font-size:18px">kg</span></div>
+                <div class="lbl">LPG Equivalent / Day</div>
+            </div>
+        </div>
+
+        <!-- ── How It Works flowchart ── -->
+        <section class="flow-section" data-aos="fade-up">
+            <div class="container">
+                <div class="section-tag"><span></span>Simple Process</div>
+                <h2 class="bp-section-title">How It Works — <span class="gradient-text">4 Easy Steps</span></h2>
+                <p class="bp-section-sub">Feed daily kitchen and organic waste into the system, let anaerobic digestion
+                    do the work, collect methane-rich biogas for cooking, and use the nutrient-rich slurry as liquid
+                    fertilizer.</p>
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <div class="flow-icon">🍌</div>
+                        <div class="flow-label">Toss In Waste</div>
+                        <div class="flow-sublabel">Food scraps, peels, leftovers</div>
+                    </div>
+                    <div class="flow-arrow">›</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">⚗️</div>
+                        <div class="flow-label">Anaerobic Digestion</div>
+                        <div class="flow-sublabel">Bacteria break down waste</div>
+                    </div>
+                    <div class="flow-arrow">›</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🔥</div>
+                        <div class="flow-label">Biogas Generated</div>
+                        <div class="flow-sublabel">Methane-rich cooking gas</div>
+                    </div>
+                    <div class="flow-arrow">›</div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🌱</div>
+                        <div class="flow-label">Slurry Collected</div>
+                        <div class="flow-sublabel">Natural liquid fertilizer</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Daily Output ── -->
+        <section class="bp-section" data-aos="fade-up">
+            <div class="section-tag"><span></span>Daily Output</div>
+            <h2 class="bp-section-title">What the System <span class="gradient-text">Produces</span></h2>
+            <p class="bp-section-sub">WONDERBIN turns organic waste into two useful outputs: biogas for cooking or
+                energy use, and nutrient-rich liquid fertilizer or slurry.</p>
+            <div class="output-grid">
+                <div class="output-card">
+                    <div class="oc-icon">🔥</div>
+                    <div class="oc-value">Biogas</div>
+                    <div class="oc-unit">For cooking or energy use</div>
+                    <div class="oc-label">Methane-rich renewable fuel</div>
+                </div>
+                <div class="output-card">
+                    <div class="oc-icon">💧</div>
+                    <div class="oc-value">Slurry</div>
+                    <div class="oc-unit">Liquid fertilizer output</div>
+                    <div class="oc-label">Useful for gardens, farms, and landscaping</div>
+                </div>
+                <div class="output-card">
+                    <div class="oc-icon">♻️</div>
+                    <div class="oc-value">3–50 kg/day</div>
+                    <div class="oc-unit">Published waste-processing range</div>
+                    <div class="oc-label">Scales from home to institutional use</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Raw Material Box Grid ── -->
+        <section class="bp-section" style="padding-top:0;" data-aos="fade-up">
+            <div class="section-tag"><span></span>Accepted Inputs</div>
+            <h2 class="bp-section-title">What Can You <span class="gradient-text">Feed the Plant?</span></h2>
+            <p class="bp-section-sub">Use the plant with the accepted organic inputs published for WONDERBIN. Only
+                supported feedstock types are listed here.</p>
+
+            <div class="inputs-grid">
+                <div class="input-box">
+                    <span class="ib-img">🥦</span>
+                    <span class="ib-pct">✓</span>
+                    <span class="ib-label">Vegetable Waste</span>
+                    <span class="ib-sub">Vegetable peels, leaves, and trimmings</span>
+                    <div class="ib-bar">
+                        <div class="ib-bar-fill" style="width:100%"></div>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="ib-img">🍱</span>
+                    <span class="ib-pct">✓</span>
+                    <span class="ib-label">Food Scraps</span>
+                    <span class="ib-sub">Cooked leftovers and plate waste</span>
+                    <div class="ib-bar">
+                        <div class="ib-bar-fill" style="width:100%"></div>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="ib-img">🍊</span>
+                    <span class="ib-pct">✓</span>
+                    <span class="ib-label">Fruit Peels</span>
+                    <span class="ib-sub">Fruit peels and organic fruit residue</span>
+                    <div class="ib-bar">
+                        <div class="ib-bar-fill" style="width:100%"></div>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="ib-img">🍖</span>
+                    <span class="ib-pct">✓</span>
+                    <span class="ib-label">Meat Waste</span>
+                    <span class="ib-sub">Meat scraps and food-processing residue</span>
+                    <div class="ib-bar">
+                        <div class="ib-bar-fill" style="width:100%"></div>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <span class="ib-img">🐄</span>
+                    <span class="ib-pct">✓</span>
+                    <span class="ib-label">Animal Dung</span>
+                    <span class="ib-sub">Animal dung and manure</span>
+                    <div class="ib-bar">
+                        <div class="ib-bar-fill" style="width:100%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Product Types ── -->
+        <section class="bp-section" style="padding-top:0;" data-aos="fade-up">
+            <div class="section-tag"><span></span>Product Range</div>
+            <h2 class="bp-section-title">Domestic & Commercial <span class="gradient-text">Models</span></h2>
+            <p class="bp-section-sub">Published model sizes range from compact home systems to larger commercial units
+                for canteens, communities, hotels, hospitals, and institutions.</p>
+            <div class="type-grid">
+                <div class="type-card" data-aos="fade-right">
+                    <div class="tc-icon">🏠</div>
+                    <h3>Domestic Portable Biogas</h3>
+                    <p>Designed for homes and residential spaces. The published domestic range covers 1 m³ and 1.5 m³
+                        units for 3–5 kg/day of waste, with 3 m³ available for larger families or small-community use.
+                        Smaller models fit balcony, backyard, or terrace installations.</p>
+                    <div class="tc-tags">
+                        <span class="tc-tag">3–10 kg/day</span>
+                        <span class="tc-tag">1–3 m³ models</span>
+                        <span class="tc-tag">Compact footprint</span>
+                        <span class="tc-tag">25 yr lifespan</span>
+                    </div>
+                </div>
+                <div class="type-card" data-aos="fade-left">
+                    <div class="tc-icon">🏨</div>
+                    <h3>Commercial Portable Biogas</h3>
+                    <p>Built for canteens, apartment communities, hotels, hospitals, schools, and institutions. The
+                        published commercial range covers 4.5 m³ to 15 m³, handling 15–50 kg/day of waste and producing
+                        1.5–5 kg LPG equivalent per day depending on model.</p>
+                    <div class="tc-tags">
+                        <span class="tc-tag">15–50 kg/day</span>
+                        <span class="tc-tag">4.5–15 m³ models</span>
+                        <span class="tc-tag">Portable format</span>
+                        <span class="tc-tag">Low maintenance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Domestic Spec Table ── -->
+        <section class="bp-section" style="padding-top:0;" data-aos="fade-up">
+            <div class="section-tag"><span></span>Technical Specs</div>
+            <h2 class="bp-section-title">Published Model <span class="gradient-text">Specifications</span></h2>
+            <p class="bp-section-sub">Choose the capacity that matches your daily organic waste generation and
+                installation conditions. Digging requirements vary by model.</p>
+            <div class="spec-table-wrap">
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Capacity (m³)</th>
+                            <th>Max Waste (kg/day)</th>
+                            <th>Gas Output (hrs)</th>
+                            <th>LPG Equivalent</th>
+                            <th>Slurry</th>
+                            <th>Height (m)</th>
+                            <th>Weight (kg)</th>
+                            <th>Area (m²)</th>
+                            <th>Digging?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>2 – 2.5</td>
+                            <td>300 g</td>
+                            <td>3 L</td>
+                            <td>1.2</td>
+                            <td>50</td>
+                            <td>1.2</td>
+                            <td class="no">No</td>
+                        </tr>
+                        <tr>
+                            <td>1.5</td>
+                            <td>5</td>
+                            <td>3 – 4</td>
+                            <td>500 g</td>
+                            <td>5 L</td>
+                            <td>1.3</td>
+                            <td>70</td>
+                            <td>1.4</td>
+                            <td class="no">No</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>10</td>
+                            <td>6 – 8</td>
+                            <td>1 kg</td>
+                            <td>10 L</td>
+                            <td>1.8</td>
+                            <td>120</td>
+                            <td>1.6</td>
+                            <td class="yes">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="bp-section-title" style="margin-top:40px;">Commercial Models — <span
+                    class="gradient-text">Specifications</span></h2>
+            <p class="bp-section-sub">Published commercial models scale from compact business use to higher-capacity
+                institutional applications.</p>
+            <div class="spec-table-wrap">
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Capacity (m³)</th>
+                            <th>Max Waste (kg/day)</th>
+                            <th>Gas Output (hrs)</th>
+                            <th>LPG Equivalent</th>
+                            <th>Slurry</th>
+                            <th>Height (m)</th>
+                            <th>Weight (kg)</th>
+                            <th>Area (m²)</th>
+                            <th>Digging?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6</td>
+                            <td>20</td>
+                            <td>—</td>
+                            <td>2 kg</td>
+                            <td>20 L</td>
+                            <td>1.2</td>
+                            <td>170</td>
+                            <td>2.4</td>
+                            <td class="yes">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>7.5</td>
+                            <td>25</td>
+                            <td>—</td>
+                            <td>2.5 kg</td>
+                            <td>25 L</td>
+                            <td>1.4</td>
+                            <td>180</td>
+                            <td>2.4</td>
+                            <td class="yes">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>30</td>
+                            <td>—</td>
+                            <td>3 kg</td>
+                            <td>30 L</td>
+                            <td>1.5</td>
+                            <td>190</td>
+                            <td>2.4</td>
+                            <td class="yes">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>40</td>
+                            <td>—</td>
+                            <td>4 kg</td>
+                            <td>40 L</td>
+                            <td>1.8</td>
+                            <td>250</td>
+                            <td>2.4</td>
+                            <td class="yes">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>50</td>
+                            <td>—</td>
+                            <td>5 kg</td>
+                            <td>50 L</td>
+                            <td>2.1</td>
+                            <td>300</td>
+                            <td>2.4</td>
+                            <td class="yes">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════
+             3D PRODUCT IMAGE GALLERY
+             ══════════════════════════════════════ -->
+        <section class="gallery-section-3d bp-section" style="padding-top:0;" data-aos="fade-up">
+            <div class="section-tag"><span></span>Plant Gallery</div>
+            <h2 class="bp-section-title">See Our <span class="gradient-text">Models in Action</span></h2>
+
+            <!-- Tab Bar -->
+            <div class="model-tabs-3d">
+                <button class="model-tab-3d active" onclick="switchPanel3d('1cum',this)">1 m³ — Domestic</button>
+                <button class="model-tab-3d" onclick="switchPanel3d('3cum',this)">3 m³ — Extended Family</button>
+                <button class="model-tab-3d" onclick="switchPanel3d('6cum',this)">6 m³ — Small Comm.</button>
+                <button class="model-tab-3d" onclick="switchPanel3d('9cum',this)">9 m³ — Commercial</button>
+                <button class="model-tab-3d" onclick="switchPanel3d('15cum',this)">15 m³ — Large Comm.</button>
+            </div>
+
+            <!-- ── 1 CUM ── -->
+            <div class="model-panel-3d active" id="panel3d-1cum">
+                <div class="panel-meta">
+                    <div>
+                        <h3>1 m³ Portable Biogas Plant — Domestic</h3>
+                        <p>Compact residential model for daily kitchen waste. Published for up to 3 kg/day waste input,
+                            2–2.5 hours of cooking gas, and 3 L/day slurry output with no digging required.</p>
+                    </div>
+                    <span class="panel-badge-3d">Up to 3 kg/day · 2–2.5 hrs gas</span>
+                </div>
+                <div class="gallery-3d-stage">
+                    <div class="carousel-track" id="track-1cum"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="prevSlide('1cum')">&#8249;</button>
+                    <div class="carousel-dots" id="dots-1cum"></div>
+                    <button class="carousel-btn" onclick="nextSlide('1cum')">&#8250;</button>
+                </div>
+                <div class="thumb-strip-3d" id="thumbs3d-1cum"></div>
+            </div>
+
+            <!-- ── 3 CUM ── -->
+            <div class="model-panel-3d" id="panel3d-3cum">
+                <div class="panel-meta">
+                    <div>
+                        <h3>3 m³ Portable Biogas Plant — Extended Family</h3>
+                        <p>Extended-family or small-community model published for up to 10 kg/day of organic waste, 6–8
+                            hours of cooking gas, and 10 L/day slurry output. Digging is required for this model.</p>
+                    </div>
+                    <span class="panel-badge-3d">Up to 10 kg/day · 6–8 hrs gas</span>
+                </div>
+                <div class="gallery-3d-stage">
+                    <div class="carousel-track" id="track-3cum"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="prevSlide('3cum')">&#8249;</button>
+                    <div class="carousel-dots" id="dots-3cum"></div>
+                    <button class="carousel-btn" onclick="nextSlide('3cum')">&#8250;</button>
+                </div>
+                <div class="thumb-strip-3d" id="thumbs3d-3cum"></div>
+            </div>
+
+            <!-- ── 6 CUM ── -->
+            <div class="model-panel-3d" id="panel3d-6cum">
+                <div class="panel-meta">
+                    <div>
+                        <h3>6 m³ Portable Biogas Plant — Small Commercial</h3>
+                        <p>Suited to canteens, restaurants, and apartment communities. Published for 20 kg/day waste
+                            loading, 2 kg LPG-equivalent output per day, and 20 L/day slurry output.</p>
+                    </div>
+                    <span class="panel-badge-3d">Up to 20 kg/day · 2 kg LPG equiv</span>
+                </div>
+                <div class="gallery-3d-stage">
+                    <div class="carousel-track" id="track-6cum"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="prevSlide('6cum')">&#8249;</button>
+                    <div class="carousel-dots" id="dots-6cum"></div>
+                    <button class="carousel-btn" onclick="nextSlide('6cum')">&#8250;</button>
+                </div>
+                <div class="thumb-strip-3d" id="thumbs3d-6cum"></div>
+            </div>
+
+            <!-- ── 9 CUM ── -->
+            <div class="model-panel-3d" id="panel3d-9cum">
+                <div class="panel-meta">
+                    <div>
+                        <h3>9 m³ Portable Biogas Plant — Commercial</h3>
+                        <p>Designed for mid-size hotels, schools, and institutional kitchens. Published for 30 kg/day
+                            waste loading, 3 kg LPG-equivalent output, and 30 L/day slurry output.</p>
+                    </div>
+                    <span class="panel-badge-3d">Up to 30 kg/day · 3 kg LPG equiv</span>
+                </div>
+                <div class="gallery-3d-stage">
+                    <div class="carousel-track" id="track-9cum"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="prevSlide('9cum')">&#8249;</button>
+                    <div class="carousel-dots" id="dots-9cum"></div>
+                    <button class="carousel-btn" onclick="nextSlide('9cum')">&#8250;</button>
+                </div>
+                <div class="thumb-strip-3d" id="thumbs3d-9cum"></div>
+            </div>
+
+            <!-- ── 15 CUM ── -->
+            <div class="model-panel-3d" id="panel3d-15cum">
+                <div class="panel-meta">
+                    <div>
+                        <h3>15 m³ Portable Biogas Plant — Large Commercial</h3>
+                        <p>Higher-capacity unit for hotels, hospitals, and industrial facilities. Published for 50
+                            kg/day waste loading, 5 kg LPG-equivalent output, and 50 L/day slurry output.</p>
+                    </div>
+                    <span class="panel-badge-3d">Up to 50 kg/day · 5 kg LPG equiv</span>
+                </div>
+                <div class="gallery-3d-stage">
+                    <div class="carousel-track" id="track-15cum"></div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="prevSlide('15cum')">&#8249;</button>
+                    <div class="carousel-dots" id="dots-15cum"></div>
+                    <button class="carousel-btn" onclick="nextSlide('15cum')">&#8250;</button>
+                </div>
+                <div class="thumb-strip-3d" id="thumbs3d-15cum"></div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lb-overlay" id="lb-overlay" onclick="closeLb()">
+            <div class="lb-inner" onclick="event.stopPropagation()">
+                <button class="lb-close" onclick="closeLb()">&#x2715;</button>
+                <img class="lb-img" id="lb-img" src="" alt="">
+            </div>
+        </div>
+
+
+        <!-- ── Key Benefits ── -->
+        <section class="bp-section" style="padding-top:0;" data-aos="fade-up">
+            <div class="section-tag"><span></span>Why Choose Us</div>
+            <h2 class="bp-section-title">Key <span class="gradient-text">Benefits</span></h2>
+            <p class="bp-section-sub">These are the strongest supported product benefits for WONDERBIN based on the
+                published model tables and reviewed product copy.</p>
+            <div class="benefits-strip">
+                <div class="benefit-tile">
+                    <div class="bt-icon">⚡</div>
+                    <div>
+                        <h4>Useful Energy from Waste</h4>
+                        <p>Convert daily organic waste into usable biogas for cooking or energy use on site.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">🧹</div>
+                    <div>
+                        <h4>Sealed, Odour-Free Design</h4>
+                        <p>The reviewed product copy describes the system as sealed, odour-free, and airtight.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">🌿</div>
+                    <div>
+                        <h4>Liquid Fertilizer Output</h4>
+                        <p>The digestion process also delivers slurry or liquid fertilizer as a useful second output
+                            stream.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">🔧</div>
+                    <div>
+                        <h4>Model-Based Installation Options</h4>
+                        <p>Several models are published as no-dig installations, while 3 m³, 12 m³, and 15 m³ require
+                            digging.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">📦</div>
+                    <div>
+                        <h4>Portable, Ready-to-Install Format</h4>
+                        <p>WONDERBIN is positioned as a compact, portable, ready-to-install system for residential and
+                            commercial use.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">🎨</div>
+                    <div>
+                        <h4>Compact Footprint</h4>
+                        <p>Published footprints start at 1.2 m² for smaller units, making them suitable for constrained
+                            spaces.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">🛡️</div>
+                    <div>
+                        <h4>25-Year Durability</h4>
+                        <p>Built from biogas-resistant ISO resin and polyester fibre-reinforced membrane.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">🔒</div>
+                    <div>
+                        <h4>Leakage and Seepage Prevention</h4>
+                        <p>The reviewed copy states that the airtight construction is designed to prevent gas leakage
+                            and seepage.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">👨‍👩‍👧</div>
+                    <div>
+                        <h4>Low Maintenance Use</h4>
+                        <p>The product is positioned as easy to maintain, though detailed service intervals are not
+                            published on the reviewed page.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ── CTA Buttons ── -->
+        <div class="menu-action" data-aos="zoom-in">
+            <a href="index.html" class="btn btn-primary magnetic"><span>Main Menu</span></a>
+            <a href="contact.html" class="btn btn-primary magnetic"><span>Get a Free Quote</span></a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand" data-aos="fade-up" data-aos-delay="0">
+                    <a href="#" class="logo footer-logo-container">
+                        <img src="images/biopower-logo.png" alt="BioPower Logo" class="logo-img footer-logo">
+                    </a>
+                    <p>Biopower, established in 2006, is a leading waste-to-energy solutions provider, transforming
+                        organic waste into renewable energy through innovative biogas technologies.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" class="magnetic">Home</a></li>
+                        <li><a href="about.html" class="magnetic">About Us</a></li>
+                        <li><a href="index.html#products" class="magnetic">Products</a></li>
+                        <li><a href="contact.html" class="magnetic">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="biogas_plant.html" class="magnetic">Portable Biogas Plants</a></li>
+                        <li><a href="stp.html" class="magnetic">Sewage Treatment Plants</a></li>
+                        <li><a href="contact.html" class="magnetic">Installation & Setup</a></li>
+                        <li><a href="contact.html" class="magnetic">Maintenance & Support</a></li>
+                        <li><a href="contact.html" class="magnetic">Energy Consulting</a></li>
+                        <li><a href="cbg.html" class="magnetic">Bio-CNG Systems</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>info@biopower.co.in</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <span>+91 80311 94751 / +91 73381 29464</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span>BPG renewables pvt ltd<br>No 26, 5th Cross, Hennur Main Road,
+                            Kacharakanahalli,<br>Bengaluru, Bengaluru Urban, Karnataka, 560084</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 BIO POWER. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // ═══════════════════════════════════
+        //  3D CAROUSEL ENGINE
+        // ═══════════════════════════════════
+        const MODELS = {
+            '1cum': {
+                images: [
+                    { src: 'images/plants/1cum/1cum_image.png', label: 'WONDERBIN 1m³ — Front View' },
+                    { src: 'images/plants/1cum/1.png', label: 'WONDERBIN 1m³ — Side View' },
+                    { src: 'images/plants/1cum/2.png', label: 'WONDERBIN 1m³ — Installed' },
+                    { src: 'images/plants/1cum/3.png', label: 'WONDERBIN 1m³ — Detail' },
+                    { src: 'images/plants/1cum/4.png', label: 'WONDERBIN 1m³ — Overview' }
+                ]
+            },
+            '3cum': {
+                images: [
+                    { src: 'images/plants/3cum/Gemini_Generated_Image_ahg5lvahg5lvahg5.png', label: 'WONDERBIN 3m³ — View 1' },
+                    { src: 'images/plants/3cum/Gemini_Generated_Image_pxhyfdpxhyfdpxhy.png', label: 'WONDERBIN 3m³ — View 2' },
+                    { src: 'images/plants/3cum/Gemini_Generated_Image_rtrqevrtrqevrtrq.png', label: 'WONDERBIN 3m³ — View 3' },
+                    { src: 'images/plants/3cum/Gemini_Generated_Image_vps5ujvps5ujvps5.png', label: 'WONDERBIN 3m³ — View 5' }
+                ]
+            },
+            '6cum': {
+                images: [
+                    { src: 'images/plants/6cum/Gemini_Generated_Image_1ilcrf1ilcrf1ilc.png', label: 'WONDERBIN 6m³ — View 1' },
+                    { src: 'images/plants/6cum/Gemini_Generated_Image_jwwsqejwwsqejwws.png', label: 'WONDERBIN 6m³ — View 2' },
+                    { src: 'images/plants/6cum/Gemini_Generated_Image_pbiqkrpbiqkrpbiq.png', label: 'WONDERBIN 6m³ — View 3' },
+                    { src: 'images/plants/6cum/Aerial view of green biogas digester.png', label: 'WONDERBIN 6m³ — Aerial View' },
+                    { src: 'images/plants/6cum/Wonderbin biogas digester tank close-up.png', label: 'WONDERBIN 6m³ — Close-Up' }
+                ]
+            },
+            '9cum': {
+                images: [
+                    { src: 'images/plants/9cum/Gemini_Generated_Image_3ec3n43ec3n43ec3.png', label: 'WONDERBIN 9m³ — View 1' },
+                    { src: 'images/plants/9cum/Gemini_Generated_Image_oh5ot6oh5ot6oh5o.png', label: 'WONDERBIN 9m³ — View 2' }
+                ]
+            },
+            '15cum': {
+                images: [
+                    { src: 'images/plants/15cum/Gemini_Generated_Image_7lcm1m7lcm1m7lcm.png', label: 'WONDERBIN 15m³ — View 1' },
+                    { src: 'images/plants/15cum/Gemini_Generated_Image_fak2v3fak2v3fak2.png', label: 'WONDERBIN 15m³ — View 2' }
+                ]
+            }
+        };
+
+        const state = {};
+        Object.keys(MODELS).forEach(m => { state[m] = { idx: 0 }; });
+
+        function buildCarousel(model) {
+            const imgs = MODELS[model].images;
+            const track = document.getElementById('track-' + model);
+            const dotsEl = document.getElementById('dots-' + model);
+            const thumbsEl = document.getElementById('thumbs3d-' + model);
+            if (!track) return;
+
+            track.innerHTML = '';
+            dotsEl.innerHTML = '';
+            thumbsEl.innerHTML = '';
+
+            const cur = state[model].idx;
+            const total = imgs.length;
+
+            // Build visible cards: far-left, left, center, right, far-right
+            const slots = [];
+            if (total >= 5) {
+                slots.push({ offset: -2, cls: 'far-left' });
+                slots.push({ offset: -1, cls: 'side-left' });
+                slots.push({ offset: 0, cls: 'center' });
+                slots.push({ offset: 1, cls: 'side-right' });
+                slots.push({ offset: 2, cls: 'far-right' });
+            } else if (total >= 3) {
+                slots.push({ offset: -1, cls: 'side-left' });
+                slots.push({ offset: 0, cls: 'center' });
+                slots.push({ offset: 1, cls: 'side-right' });
+            } else {
+                slots.push({ offset: 0, cls: 'center' });
+                if (total === 2) slots.push({ offset: 1, cls: 'side-right' });
+            }
+
+            slots.forEach(slot => {
+                const imgIdx = ((cur + slot.offset) % total + total) % total;
+                const imgData = imgs[imgIdx];
+                const card = document.createElement('div');
+                card.className = 'img-card-3d ' + slot.cls;
+                const isCenter = slot.cls === 'center';
+
+                // Add tilt effect on center card mousemove
+                card.innerHTML = `
+                    <div class="card-face">
+                        <img src="${imgData.src}" alt="${imgData.label}" loading="lazy">
+                        ${isCenter ? `<div class="card-caption">${imgData.label}</div>` : ''}
+                    </div>`;
+
+                if (isCenter) {
+                    card.addEventListener('click', () => openLb(imgData.src, imgData.label));
+                    // 3D tilt on mouse move
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 18;
+                        const y = ((e.clientY - rect.top) / rect.height - 0.5) * -12;
+                        card.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg) scale(1.02)`;
+                        card.style.animation = 'none';
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = '';
+                        card.style.animation = '';
+                    });
+                } else {
+                    card.addEventListener('click', () => {
+                        if (slot.offset < 0) prevSlide(model);
+                        else nextSlide(model);
+                    });
+                }
+                track.appendChild(card);
+            });
+
+            // Dots
+            imgs.forEach((_, i) => {
+                const d = document.createElement('div');
+                d.className = 'carousel-dot' + (i === cur ? ' active' : '');
+                d.onclick = () => goSlide(model, i);
+                dotsEl.appendChild(d);
+            });
+
+            // Thumbnails
+            imgs.forEach((imgData, i) => {
+                const t = document.createElement('div');
+                t.className = 'thumb-3d' + (i === cur ? ' active' : '');
+                t.innerHTML = `<img src="${imgData.src}" alt="thumb ${i + 1}" loading="lazy">`;
+                t.onclick = () => goSlide(model, i);
+                thumbsEl.appendChild(t);
+            });
+        }
+
+        function goSlide(model, idx) {
+            state[model].idx = idx;
+            buildCarousel(model);
+        }
+
+        function nextSlide(model) {
+            const total = MODELS[model].images.length;
+            state[model].idx = (state[model].idx + 1) % total;
+            buildCarousel(model);
+        }
+
+        function prevSlide(model) {
+            const total = MODELS[model].images.length;
+            state[model].idx = (state[model].idx - 1 + total) % total;
+            buildCarousel(model);
+        }
+
+        function switchPanel3d(model, btn) {
+            document.querySelectorAll('.model-panel-3d').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.model-tab-3d').forEach(t => t.classList.remove('active'));
+            document.getElementById('panel3d-' + model).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        // Keyboard nav
+        document.addEventListener('keydown', (e) => {
+            const activePanel = document.querySelector('.model-panel-3d.active');
+            if (!activePanel) return;
+            const model = activePanel.id.replace('panel3d-', '');
+            if (e.key === 'ArrowLeft') prevSlide(model);
+            if (e.key === 'ArrowRight') nextSlide(model);
+            if (e.key === 'Escape') closeLb();
+        });
+
+        // Auto-play
+        let autoTimer = null;
+        function startAutoPlay(model) {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => {
+                const activePanel = document.querySelector('.model-panel-3d.active');
+                if (activePanel && activePanel.id === 'panel3d-' + model) nextSlide(model);
+            }, 4000);
+        }
+
+        // Lightbox
+        function openLb(src, label) {
+            document.getElementById('lb-img').src = src;
+            document.getElementById('lb-img').alt = label || '';
+            document.getElementById('lb-overlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLb() {
+            document.getElementById('lb-overlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('lb-overlay').addEventListener('click', closeLb);
+
+        // Init all carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            Object.keys(MODELS).forEach(m => buildCarousel(m));
+            startAutoPlay('1cum');
+        });
+    </script>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

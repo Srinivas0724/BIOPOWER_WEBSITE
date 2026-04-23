@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewage & Wastewater Treatment Plants | BIOPOWER Water Solutions</title>
+    <meta name="description"
+        content="BIOPOWER sewage and wastewater treatment plants deliver modular STP and ETP solutions using ASP, SBR, MBBR and related treatment technologies for municipal and industrial wastewater.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .bp-section {
+            padding: 60px 0;
+        }
+
+        .bp-section-title {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .bp-section-sub {
+            color: var(--gray-400);
+            font-size: 15px;
+            margin-bottom: 40px;
+            max-width: 760px;
+            line-height: 1.8;
+        }
+
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-strip-item {
+            text-align: center;
+        }
+
+        .stat-strip-item .num {
+            font-size: clamp(24px, 4vw, 38px);
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-strip-item .lbl {
+            font-size: 12px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            margin: 20px 0 60px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+            margin-bottom: 50px;
+        }
+
+        .intro-text p {
+            color: var(--gray-400);
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .highlight-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            border-color: var(--primary-blue);
+            background: rgba(0, 102, 204, 0.06);
+            transform: translateX(5px);
+        }
+
+        .highlight-item .hi-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .benefits-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .benefit-tile {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px 20px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-tile:hover {
+            border-color: var(--primary-blue);
+            background: rgba(0, 102, 204, 0.06);
+        }
+
+        .benefit-tile .bt-icon {
+            font-size: 26px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .benefit-tile h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .benefit-tile p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .tech-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .tech-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 32px 36px;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 28px;
+            align-items: start;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary-blue), var(--primary-red));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tech-card:hover::before {
+            opacity: 1;
+        }
+
+        .tech-card:hover {
+            border-color: rgba(0, 102, 204, 0.3);
+            transform: translateX(6px);
+            box-shadow: 0 0 30px rgba(0, 102, 204, 0.12);
+        }
+
+        .tech-card .tc-num {
+            font-size: 52px;
+            font-weight: 800;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(0, 102, 204, 0.3);
+            line-height: 1;
+            text-align: center;
+        }
+
+        .tech-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .tech-card .tc-badge {
+            display: inline-block;
+            background: rgba(0, 102, 204, 0.15);
+            color: var(--primary-blue);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .tech-card p {
+            color: var(--gray-400);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .tc-steps {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tc-steps li {
+            font-size: 13px;
+            color: var(--gray-400);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.6;
+        }
+
+        .tc-steps li::before {
+            content: '›';
+            color: var(--primary-blue);
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: -1px;
+        }
+
+        .spec-table-wrap {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            margin: 30px 0;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .spec-table thead tr {
+            background: linear-gradient(90deg, var(--primary-blue), #004fa3);
+        }
+
+        .spec-table thead th {
+            padding: 14px 18px;
+            color: var(--white);
+            font-weight: 600;
+            text-align: left;
+            white-space: nowrap;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--card-bg);
+            transition: background 0.2s;
+        }
+
+        .spec-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .spec-table tbody tr:hover {
+            background: rgba(0, 102, 204, 0.07);
+        }
+
+        .spec-table td {
+            padding: 14px 18px;
+            color: var(--gray-300);
+            vertical-align: middle;
+            line-height: 1.7;
+        }
+
+        .spec-table td:first-child {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .etp-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .etp-step {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 20px 24px;
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 18px;
+            align-items: start;
+            transition: all 0.3s ease;
+        }
+
+        .etp-step:hover {
+            border-color: var(--primary-blue);
+            background: rgba(0, 102, 204, 0.05);
+        }
+
+        .etp-step .es-num {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-red));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .etp-step h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .etp-step p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .etp-step .es-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .es-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 3px 10px;
+            font-size: 11px;
+            color: var(--gray-400);
+        }
+
+        .app-boxes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .app-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            padding: 22px 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .app-box:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.15);
+        }
+
+        .app-box .ab-icon {
+            font-size: 34px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .app-box span:last-child {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--white);
+            display: block;
+            line-height: 1.5;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .faq-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 24px 22px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-card:hover {
+            border-color: var(--primary-blue);
+            background: rgba(0, 102, 204, 0.05);
+        }
+
+        .faq-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .faq-card p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 60px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 15px;
+            max-width: 620px;
+            margin: 0 auto 28px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .cta-banner .cta-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        @media (max-width: 992px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-card {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .tech-card .tc-num {
+                font-size: 36px;
+                text-align: left;
+            }
+
+            .app-boxes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stat-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-strip,
+            .app-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-banner {
+                padding: 32px 20px;
+            }
+
+            .tech-card {
+                padding: 24px 20px;
+            }
+
+            .etp-step {
+                grid-template-columns: 1fr;
+            }
+
+            .etp-step .es-num {
+                width: 36px;
+                height: 36px;
+                font-size: 12px;
+            }
+        }
+    </style>
+    <script>
+        function removePreloader() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader && !preloader.classList.contains('hidden')) {
+                preloader.classList.add('hidden');
+                setTimeout(() => { preloader.style.display = 'none'; }, 1000);
+            }
+        }
+        window.addEventListener('load', () => { setTimeout(removePreloader, 1500); });
+        setTimeout(removePreloader, 2500);
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 1000, once: true });
+            setTimeout(() => {
+                document.querySelectorAll('[data-aos]').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }, 3000);
+        });
+    </script>
+</head>
+
+<body class="biogas-detail-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo magnetic">
+                    <img src="images/biopower-logo.png" alt="BioPower Logo" class="logo-img">
+                </a>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link magnetic" data-text="Home">Home</a></li>
+                        <li><a href="about.html" class="nav-link magnetic" data-text="About">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link magnetic" data-text="Products">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="biogas_plant.html">Portable Biogas Plants</a></li>
+                                <li><a href="inst_comun.html">Institutional Biogas Plants</a></li>
+                                <li><a href="cbg.html">CBG Plants</a></li>
+                                <li><a href="owc.html">Composting Machines</a></li>
+                                <li><a href="stp.html">STP / ETP Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://synodmart.com" class="nav-link magnetic" data-text="Shop">Shop</a></li>
+                        <li><a href="index.html#faqs" class="nav-link magnetic" data-text="FAQs">FAQs</a></li>
+                        <li><a href="contact.html" class="nav-link magnetic" data-text="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary magnetic">Request Quote</a>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="biogas-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="section-title">Sewage & Wastewater <span class="gradient-text">Treatment Plants</span></h1>
+                <p class="section-desc">
+                    Modular sewage and wastewater treatment solutions for municipal, institutional, and industrial
+                    applications —
+                    engineered to improve effluent quality, support compliance, and recover value from treatment
+                    byproducts.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container content-wrapper">
+
+        <!-- Stat Strip -->
+        <div class="stat-strip">
+            <div class="stat-strip-item">
+                <div class="num">ASP</div>
+                <div class="lbl">Suspended Growth Option</div>
+            </div>
+            <div class="stat-strip-item">
+                <div class="num">SBR</div>
+                <div class="lbl">Batch Treatment Option</div>
+            </div>
+            <div class="stat-strip-item">
+                <div class="num">MBBR</div>
+                <div class="lbl">Biofilm Treatment Option</div>
+            </div>
+            <div class="stat-strip-item">
+                <div class="num">SCADA</div>
+                <div class="lbl">Automation Support</div>
+            </div>
+        </div>
+
+        <!-- Overview -->
+        <section class="bp-section" style="padding-top:0;">
+            <div class="section-tag"><span></span>Overview</div>
+            <div class="intro-grid" data-aos="fade-up">
+                <div class="intro-text">
+                    <h2 class="bp-section-title">Advanced Treatment for <span class="gradient-text">Wastewater &
+                            Effluent</span></h2>
+                    <p>
+                        BIOPOWER’s sewage and wastewater treatment systems are positioned as modular, multi-stage
+                        solutions
+                        for municipal sewage, industrial effluent, and large institutional wastewater streams. The
+                        public
+                        product positioning focuses on contaminant removal, pathogen reduction, nutrient management, and
+                        production of high-quality treated effluent through combined physical, biological, and tertiary
+                        treatment stages.
+                    </p>
+                    <p>
+                        The reviewed STP and wastewater pages support a strong value proposition around energy
+                        efficiency,
+                        automation, lower sludge generation, and reuse-oriented treatment. The systems are also
+                        positioned
+                        as fully customizable turnkey solutions for government, industrial, and large-establishment
+                        clients.
+                    </p>
+                    <p>
+                        Because the accessible public pages do not publish exact hydraulic capacities, removal
+                        guarantees,
+                        or model-wise flow ranges, this page focuses on the technologies, process logic, and benefits
+                        that
+                        are actually supported on biopower.co.in.
+                    </p>
+                </div>
+                <div class="highlight-list">
+                    <div class="highlight-item"><span class="hi-icon">⚙️</span>Multi-stage physical, biological, and
+                        tertiary treatment</div>
+                    <div class="highlight-item"><span class="hi-icon">✅</span>Positioned for environmentally compliant
+                        operations</div>
+                    <div class="highlight-item"><span class="hi-icon">📊</span>SCADA-based monitoring and automation
+                        support</div>
+                    <div class="highlight-item"><span class="hi-icon">🌿</span>Biogas, nutrients, and fertilizer
+                        recovery positioning</div>
+                    <div class="highlight-item"><span class="hi-icon">🧩</span>Customizable turnkey solutions for varied
+                        site conditions</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STP -->
+        <section class="bp-section" style="padding-top:0;">
+            <div class="section-tag" data-aos="fade-up"><span></span>Part 1 — Sewage Treatment</div>
+            <h2 class="bp-section-title" data-aos="fade-up">Sewage Treatment <span class="gradient-text">Plants
+                    (STP)</span></h2>
+            <p class="bp-section-sub" data-aos="fade-up">
+                BIOPOWER positions its STP solutions as energy-efficient, optimized systems that support lower sludge
+                yield,
+                increased biogas potential, easier operation, and improved effluent quality through proven biological
+                treatment technologies.
+            </p>
+
+            <div class="benefits-strip" data-aos="fade-up">
+                <div class="benefit-tile">
+                    <div class="bt-icon">⚡</div>
+                    <div>
+                        <h4>Energy-Efficient Operation</h4>
+                        <p>The public positioning emphasizes energy- and cost-efficient treatment for long-term
+                            operating value.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">🧪</div>
+                    <div>
+                        <h4>Multi-Stage Contaminant Removal</h4>
+                        <p>Designed to remove contaminants, pathogens, suspended solids, and nutrients through combined
+                            treatment steps.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">🌬️</div>
+                    <div>
+                        <h4>Lower Odour Impact</h4>
+                        <p>The public STP copy also highlights minimal odour and lower operational nuisance.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">📋</div>
+                    <div>
+                        <h4>Compliance-Oriented Design</h4>
+                        <p>Public language supports environmentally compliant treatment and alignment with strict
+                            discharge expectations.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">♻️</div>
+                    <div>
+                        <h4>Resource Recovery Potential</h4>
+                        <p>Biopower also emphasizes the reuse of byproducts such as biogas, nutrients, and fertilizer
+                            streams.</p>
+                    </div>
+                </div>
+                <div class="benefit-tile">
+                    <div class="bt-icon">👆</div>
+                    <div>
+                        <h4>Easy Operation</h4>
+                        <p>The public site positions the systems as easier to operate, especially with automation and
+                            monitoring support.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-tag" style="margin-top:60px;" data-aos="fade-up"><span></span>STP Technologies</div>
+            <h2 class="bp-section-title" data-aos="fade-up">Core Treatment <span
+                    class="gradient-text">Technologies</span></h2>
+            <p class="bp-section-sub" data-aos="fade-up">
+                The reviewed STP pages explicitly support ASP, SBR, and MBBR, and also mention additional options such
+                as UASB and MBR.
+            </p>
+
+            <div class="tech-cards" data-aos="fade-up">
+
+                <div class="tech-card">
+                    <div class="tc-num">01</div>
+                    <div>
+                        <span class="tc-badge">Conventional</span>
+                        <h3>Activated Sludge Process (ASP)</h3>
+                        <p>
+                            A widely used suspended-growth treatment approach for municipal and related wastewater
+                            streams.
+                            BIOPOWER’s public description frames ASP as a proven and customizable biological treatment
+                            option.
+                        </p>
+                        <ul class="tc-steps">
+                            <li>Aeration of wastewater with microbial biomass</li>
+                            <li>Solid-liquid separation after biological treatment</li>
+                            <li>Clarified effluent withdrawal</li>
+                            <li>Excess biomass removal from the system</li>
+                            <li>Return of active biomass to the aeration stage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tc-num">02</div>
+                    <div>
+                        <span class="tc-badge">Batch Process</span>
+                        <h3>Sequential Batch Reactor (SBR)</h3>
+                        <p>
+                            A time-sequenced activated sludge process that combines different treatment phases in a
+                            single
+                            reactor, making it useful for flexible site conditions and controlled operation.
+                        </p>
+                        <ul class="tc-steps">
+                            <li>Works over defined fill, aeration, settling, and decant cycles</li>
+                            <li>Uses pumps, mixers, aerators, and decanters as core process equipment</li>
+                            <li>Publicly linked with PLC-based control and monitoring</li>
+                            <li>Suitable for monitored and programmable treatment cycles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tc-num">03</div>
+                    <div>
+                        <span class="tc-badge">Advanced</span>
+                        <h3>Moving Bed Biofilm Reactor (MBBR)</h3>
+                        <p>
+                            A biofilm-based process positioned as economical, efficient, and suitable for both municipal
+                            and
+                            industrial wastewater treatment, with lower energy demand and strong process performance.
+                        </p>
+                        <ul class="tc-steps">
+                            <li>Applicable to municipal and industrial wastewater</li>
+                            <li>Publicly positioned as low-energy and high-efficiency</li>
+                            <li>Supports removal of organic substances</li>
+                            <li>Suitable for nitrification and denitrification duties</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tc-num">04</div>
+                    <div>
+                        <span class="tc-badge">Additional Options</span>
+                        <h3>Other Treatment Configurations</h3>
+                        <p>
+                            The reviewed pages also reference options such as UASB and MBR as part of the wider
+                            treatment
+                            technology set, depending on wastewater characteristics and project goals.
+                        </p>
+                        <ul class="tc-steps">
+                            <li>UASB for suitable anaerobic treatment applications</li>
+                            <li>MBR for advanced biological plus membrane-based treatment</li>
+                            <li>Hybrid process combinations can be tailored project by project</li>
+                            <li>Final technology choice depends on effluent type and reuse target</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Process flow / design -->
+        <section class="bp-section" style="padding-top:0;">
+            <div class="section-tag" data-aos="fade-up"><span></span>Process & Design</div>
+            <h2 class="bp-section-title" data-aos="fade-up">Typical Treatment <span class="gradient-text">Flow
+                    Logic</span></h2>
+            <p class="bp-section-sub" data-aos="fade-up">
+                The public product description supports a standard treatment sequence of screening, primary treatment,
+                biological treatment, and final polishing or disinfection.
+            </p>
+
+            <div class="spec-table-wrap" data-aos="fade-up">
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Treatment Stage</th>
+                            <th>Website-Ready Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pre-treatment</td>
+                            <td>Screening and grit or debris removal to protect downstream treatment equipment.</td>
+                        </tr>
+                        <tr>
+                            <td>Primary treatment</td>
+                            <td>Initial solid-liquid separation and clarification before biological treatment.</td>
+                        </tr>
+                        <tr>
+                            <td>Secondary treatment</td>
+                            <td>Biological treatment using ASP, SBR, MBBR, or related processes to reduce organics and
+                                nutrients.</td>
+                        </tr>
+                        <tr>
+                            <td>Tertiary treatment</td>
+                            <td>Final filtration, polishing, and disinfection to improve effluent quality and reuse
+                                suitability.</td>
+                        </tr>
+                        <tr>
+                            <td>Sludge handling</td>
+                            <td>Separated solids may be stabilized, dewatered, or routed toward biogas and fertilizer
+                                recovery pathways where relevant.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-tag" style="margin-top:40px;" data-aos="fade-up"><span></span>Design Parameters</div>
+            <h2 class="bp-section-title" data-aos="fade-up">What the Public Pages <span
+                    class="gradient-text">Support</span></h2>
+
+            <div class="spec-table-wrap" data-aos="fade-up">
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Publicly Supported Positioning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Capacity range</td>
+                            <td>Project-specific and customizable; exact STP/ETP capacities are not specified on the
+                                reviewed pages.</td>
+                        </tr>
+                        <tr>
+                            <td>Plant layout</td>
+                            <td>Modular and scalable design adapted to site conditions and wastewater load.</td>
+                        </tr>
+                        <tr>
+                            <td>Effluent quality</td>
+                            <td>Positioned to support strict environmental standards and high-quality treated effluent;
+                                exact numeric discharge values are not published.</td>
+                        </tr>
+                        <tr>
+                            <td>Automation</td>
+                            <td>SCADA-based monitoring, real-time data visibility, and easier operation are part of the
+                                public offering.</td>
+                        </tr>
+                        <tr>
+                            <td>Construction</td>
+                            <td>Robust, corrosion-resistant construction is emphasized for longer service life.</td>
+                        </tr>
+                        <tr>
+                            <td>Energy use</td>
+                            <td>Publicly positioned as energy-efficient and cost-efficient; exact consumption figures
+                                are not published.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ETP -->
+        <section class="bp-section" style="padding-top:0;">
+            <div class="section-tag" data-aos="fade-up"><span></span>Part 2 — Effluent Treatment</div>
+            <h2 class="bp-section-title" data-aos="fade-up">Effluent Treatment <span class="gradient-text">Plants
+                    (ETP)</span></h2>
+            <p class="bp-section-sub" data-aos="fade-up">
+                BIOPOWER also positions its ETP solutions for industrial and process wastewater where staged treatment,
+                contaminant reduction, and final polishing are needed before reuse or discharge.
+            </p>
+
+            <div class="section-tag" style="margin-top:10px;" data-aos="fade-up"><span></span>Treatment Stages</div>
+            <h2 class="bp-section-title" data-aos="fade-up">Typical ETP <span class="gradient-text">Sequence</span></h2>
+
+            <div class="etp-steps" data-aos="fade-up">
+                <div class="etp-step">
+                    <div class="es-num">1</div>
+                    <div>
+                        <h4>Screening Chamber</h4>
+                        <p>Initial removal of floating debris, grit, and raw effluent solids before downstream
+                            treatment.</p>
+                    </div>
+                </div>
+                <div class="etp-step">
+                    <div class="es-num">2</div>
+                    <div>
+                        <h4>Oil & Grease Management</h4>
+                        <p>Separation of floating oil and grease where the effluent stream requires it.</p>
+                    </div>
+                </div>
+                <div class="etp-step">
+                    <div class="es-num">3</div>
+                    <div>
+                        <h4>Primary Treatment</h4>
+                        <p>Chemical and physical conditioning steps such as coagulation, flocculation, neutralization,
+                            and solid-liquid separation.</p>
+                        <div class="es-tags">
+                            <span class="es-tag">Coagulation</span>
+                            <span class="es-tag">Flocculation</span>
+                            <span class="es-tag">Neutralisation</span>
+                            <span class="es-tag">Solid-Liquid Separation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="etp-step">
+                    <div class="es-num">4</div>
+                    <div>
+                        <h4>Secondary Biological Treatment</h4>
+                        <p>Reduction of BOD, COD, and organic load through aerobic or anaerobic biological treatment
+                            depending on the effluent profile.</p>
+                        <div class="es-tags">
+                            <span class="es-tag">ASP</span>
+                            <span class="es-tag">MBBR / FAB</span>
+                            <span class="es-tag">MBR</span>
+                            <span class="es-tag">UASB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="etp-step">
+                    <div class="es-num">5</div>
+                    <div>
+                        <h4>Tertiary Polishing</h4>
+                        <p>Final-stage filtration and polishing using options such as carbon filtration, sand
+                            filtration, RO, or UF for higher effluent quality.</p>
+                        <div class="es-tags">
+                            <span class="es-tag">Carbon Filtration</span>
+                            <span class="es-tag">Sand Filtration</span>
+                            <span class="es-tag">Reverse Osmosis</span>
+                            <span class="es-tag">Ultra-Filtration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications -->
+        <section class="bp-section" style="padding-top:0;">
+            <div class="section-tag" data-aos="fade-up"><span></span>Applications</div>
+            <h2 class="bp-section-title" data-aos="fade-up">Where These Systems <span class="gradient-text">Fit
+                    Best</span></h2>
+            <p class="bp-section-sub" data-aos="fade-up">
+                The public pages position these solutions for government, industrial, institutional, and commercial
+                wastewater challenges.
+            </p>
+
+            <div class="app-boxes" data-aos="fade-up">
+                <div class="app-box">
+                    <span class="ab-icon">🏛️</span>
+                    <span>Government Organisations</span>
+                </div>
+                <div class="app-box">
+                    <span class="ab-icon">💊</span>
+                    <span>Pharmaceuticals & Drugs</span>
+                </div>
+                <div class="app-box">
+                    <span class="ab-icon">🥛</span>
+                    <span>Dairy Industry</span>
+                </div>
+                <div class="app-box">
+                    <span class="ab-icon">🛢️</span>
+                    <span>Refineries</span>
+                </div>
+                <div class="app-box">
+                    <span class="ab-icon">🧵</span>
+                    <span>Textile Industry</span>
+                </div>
+                <div class="app-box">
+                    <span class="ab-icon">🏙️</span>
+                    <span>Municipalities</span>
+                </div>
+                <div class="app-box">
+                    <span class="ab-icon">🏭</span>
+                    <span>Large Establishments</span>
+                </div>
+                <div class="app-box">
+                    <span class="ab-icon">🔬</span>
+                    <span>Research & Institutions</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section id="faqs" class="faq-section" data-aos="fade-up">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <div class="section-tag"><span></span>FAQs</div>
+                    <h2 class="section-title">Frequently Asked <span class="gradient-text-1">Questions</span></h2>
+                    <p class="section-desc">
+                        These answers stay aligned with the publicly reviewed BIOPOWER sewage and wastewater treatment
+                        pages.
+                    </p>
+                </div>
+
+                <div class="faq-accordion" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What treatment technologies does BIOPOWER publicly mention?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                The reviewed pages explicitly mention ASP, SBR, MBBR, and also reference additional
+                                options such
+                                as UASB and MBR.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are the plants customizable?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Yes. The public wastewater treatment content positions the STP and ETP offering as
+                                turnkey and
+                                customizable for site conditions and client requirements.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Does the public site publish exact plant capacities?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                No exact STP or ETP capacity ladder was exposed on the reviewed pages, so final sizing
+                                should be
+                                treated as project-specific.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is automation part of the offering?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Yes. The public pages reference SCADA and real-time monitoring as part of the wastewater
+                                treatment solution positioning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can treatment byproducts be recovered?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Yes. The reviewed content supports reuse-oriented language around biogas, nutrients, and
+                                fertilizer outputs from treatment byproducts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Who are these systems built for?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Government bodies, municipalities, industries, and large institutional establishments
+                                are all
+                                part of the publicly positioned target market.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-banner" data-aos="fade-up">
+            <h2>Need a Custom STP or ETP Solution?</h2>
+            <p>
+                Talk to BIOPOWER about a site-specific wastewater treatment design based on your effluent type,
+                treatment target, footprint, and operating requirements.
+            </p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn btn-white magnetic"><span>Request a Free Assessment</span></a>
+                <a href="index.html" class="btn btn-outline-white magnetic"><span>Explore All Products</span></a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand" data-aos="fade-up" data-aos-delay="0">
+                    <a href="index.html" class="logo footer-logo-container">
+                        <img src="images/biopower-logo.png" alt="BioPower Logo" class="logo-img footer-logo">
+                    </a>
+                    <p>
+                        BIOPOWER is a waste-to-energy and environmental solutions provider focused on sustainable
+                        treatment,
+                        resource recovery, and engineered infrastructure for water and waste streams.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" class="magnetic">Home</a></li>
+                        <li><a href="about.html" class="magnetic">About Us</a></li>
+                        <li><a href="index.html#products" class="magnetic">Products</a></li>
+                        <li><a href="contact.html" class="magnetic">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="stp.html" class="magnetic">Wastewater Treatment Plants</a></li>
+                        <li><a href="biogas_plant.html" class="magnetic">Portable Biogas Plants</a></li>
+                        <li><a href="inst_comun.html" class="magnetic">Institutional Biogas Plants</a></li>
+                        <li><a href="owc.html" class="magnetic">Organic Waste Converters</a></li>
+                        <li><a href="cbg.html" class="magnetic">Bio-CNG Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>info@biopower.co.in</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <span>+91-8031194751</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span>BPG Renewables Pvt Ltd<br>No 26, 5th Cross, Hennur Main Road,
+                            Kacharakanahalli,<br>Bengaluru, Bengaluru Urban, Karnataka, 560084</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BIO POWER. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

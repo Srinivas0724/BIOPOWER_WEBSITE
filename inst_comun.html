@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional & Community Biogas Plants | BIOPOWER Engineering</title>
+    <meta name="description"
+        content="Explore BIOPOWER institutional and community biogas plants for hotels, hospitals, campuses, industries, and community settings. Convert organic waste into biogas and reusable slurry with scalable, engineered waste-to-energy systems.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .bp-section {
+            padding: 60px 0;
+        }
+
+        .bp-section-title {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .bp-section-sub {
+            color: var(--gray-400);
+            font-size: 15px;
+            margin-bottom: 40px;
+            max-width: 760px;
+            line-height: 1.8;
+        }
+
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-strip-item {
+            text-align: center;
+        }
+
+        .stat-strip-item .num {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-strip-item .lbl {
+            font-size: 12px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: start;
+            margin-bottom: 60px;
+        }
+
+        .intro-text p {
+            color: var(--gray-400);
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .intro-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 16px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            border-color: var(--primary-blue);
+            background: rgba(0, 102, 204, 0.06);
+            transform: translateX(6px);
+        }
+
+        .highlight-item .hi-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .highlight-item span {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .app-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 30px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .app-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 25px rgba(0, 102, 204, 0.2);
+            transform: translateY(-6px);
+        }
+
+        .app-card .ac-icon {
+            font-size: 44px;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .app-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .app-card p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        .spec-table-wrap {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            margin-bottom: 40px;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .spec-table thead tr {
+            background: linear-gradient(90deg, var(--primary-blue), #004fa3);
+        }
+
+        .spec-table thead th {
+            padding: 14px 16px;
+            color: var(--white);
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--card-bg);
+            transition: background 0.2s;
+        }
+
+        .spec-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .spec-table tbody tr:hover {
+            background: rgba(0, 102, 204, 0.07);
+        }
+
+        .spec-table td {
+            padding: 13px 16px;
+            color: var(--gray-300);
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .spec-table td:first-child {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .spec-table .note-row td {
+            font-size: 12px;
+            color: var(--gray-500);
+            font-style: italic;
+            text-align: left;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .benefits-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .benefit-tile {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px 20px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-tile:hover {
+            border-color: var(--primary-blue);
+            background: rgba(0, 102, 204, 0.06);
+        }
+
+        .benefit-tile .bt-icon {
+            font-size: 26px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .benefit-tile h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .benefit-tile p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+            margin-top: 40px;
+        }
+
+        .process-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 24px 18px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        .process-step {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .process-card .pc-icon {
+            font-size: 34px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .process-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .process-card p {
+            font-size: 12px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .why-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 28px 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-red));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .why-card:hover::before {
+            opacity: 1;
+        }
+
+        .why-card:hover {
+            border-color: rgba(0, 102, 204, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 0 30px rgba(0, 102, 204, 0.15);
+        }
+
+        .why-card .wc-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .why-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.7;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .faq-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 24px 22px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-card:hover {
+            border-color: var(--primary-blue);
+            background: rgba(0, 102, 204, 0.05);
+        }
+
+        .faq-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .faq-card p {
+            font-size: 13px;
+            color: var(--gray-400);
+            line-height: 1.7;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 60px 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 15px;
+            max-width: 620px;
+            margin: 0 auto 28px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .cta-banner .cta-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        @media (max-width: 992px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-grid,
+            .benefits-strip,
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stat-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .app-grid,
+            .benefits-strip,
+            .why-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-banner {
+                padding: 36px 24px;
+            }
+        }
+    </style>
+
+    <script>
+        function removePreloader() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader && !preloader.classList.contains('hidden')) {
+                preloader.classList.add('hidden');
+                setTimeout(() => { preloader.style.display = 'none'; }, 1000);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(removePreloader, 1500);
+        });
+
+        setTimeout(removePreloader, 2500);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 1000, once: true });
+            }
+
+            setTimeout(() => {
+                document.querySelectorAll('[data-aos]').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }, 3000);
+        });
+    </script>
+</head>
+
+<body class="biogas-detail-page">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo magnetic">
+                    <img src="images/biopower-logo.png" alt="BioPower Logo" class="logo-img">
+                </a>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link magnetic" data-text="Home">Home</a></li>
+                        <li><a href="about.html" class="nav-link magnetic" data-text="About">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link magnetic" data-text="Products">Products</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="biogas_plant.html">Portable Biogas Plants</a></li>
+                                <li><a href="inst_comun.html">Institutional Biogas Plants</a></li>
+                                <li><a href="cbg.html">CBG Plants</a></li>
+                                <li><a href="owc.html">Composting Machines</a></li>
+                                <li><a href="stp.html">STP / ETP Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://synodmart.com" class="nav-link magnetic" data-text="Shop">Shop</a></li>
+                        <li><a href="index.html#faqs" class="nav-link magnetic" data-text="FAQs">FAQs</a></li>
+                        <li><a href="contact.html" class="nav-link magnetic" data-text="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary magnetic">Request Quote</a>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="biogas-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="section-title">Institutional & Community <span class="gradient-text">Biogas Plants</span>
+                </h1>
+                <p class="section-desc">
+                    Engineered waste-to-energy systems for hotels, hospitals, campuses, industries, and community
+                    settings —
+                    converting organic waste into usable biogas and reusable slurry through scalable anaerobic
+                    digestion.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container content-wrapper">
+
+        <!-- Quick Stats -->
+        <div class="stat-strip">
+            <div class="stat-strip-item">
+                <div class="num">16–20 <span style="font-size:16px">mo</span></div>
+                <div class="lbl">Indicative Payback</div>
+            </div>
+            <div class="stat-strip-item">
+                <div class="num">60–200 <span style="font-size:16px">kg</span></div>
+                <div class="lbl">LPG Equivalent / Day</div>
+            </div>
+            <div class="stat-strip-item">
+                <div class="num">3000–4000 <span style="font-size:16px">kg</span></div>
+                <div class="lbl">Published Waste Input</div>
+            </div>
+            <div class="stat-strip-item">
+                <div class="num">25–300 <span style="font-size:16px">m³</span></div>
+                <div class="lbl">Published Plant Sizes</div>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <section class="bp-section" style="padding-top:0;" data-aos="fade-up">
+            <div class="section-tag"><span></span>About This Solution</div>
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h2 class="bp-section-title">Turn Organic Waste Into <span class="gradient-text">Reliable
+                            Energy</span></h2>
+                    <p>
+                        BIOPOWER’s institutional and community biogas systems are built for sites that generate steady
+                        volumes
+                        of biodegradable waste and need a practical way to recover value from it. The solution is
+                        designed
+                        around anaerobic digestion, converting organic waste into usable biogas and nutrient-rich
+                        digestate
+                        while improving on-site waste management discipline.
+                    </p>
+                    <p>
+                        The public product focus is strongest for institutional use cases such as hotels, hospitals,
+                        industries,
+                        schools, universities, cafeterias, and other organizations with significant wet-waste generation
+                        and
+                        cooking-fuel demand. Community-scale projects are positioned within the same solution family and
+                        are
+                        typically configured around site conditions, feedstock availability, and energy goals.
+                    </p>
+                    <p>
+                        This makes the system relevant not only for waste reduction, but also for decentralized energy
+                        generation, reduced fuel purchases, improved energy security, and a lower environmental
+                        footprint.
+                    </p>
+                </div>
+
+                <div class="intro-highlights">
+                    <div class="highlight-item"><span class="hi-icon">⚡</span><span>On-site renewable energy
+                            generation</span></div>
+                    <div class="highlight-item"><span class="hi-icon">♻️</span><span>Organic waste converted into biogas
+                            and slurry</span></div>
+                    <div class="highlight-item"><span class="hi-icon">🏗️</span><span>Scalable, engineered plant
+                            configurations</span></div>
+                    <div class="highlight-item"><span class="hi-icon">📋</span><span>Project-specific design and
+                            feasibility support</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications -->
+        <section class="bp-section" style="padding-top:0;" data-aos="fade-up">
+            <div class="section-tag"><span></span>Applications</div>
+            <h2 class="bp-section-title">Who This Solution <span class="gradient-text">Fits Best</span></h2>
+            <p class="bp-section-sub">
+                BIOPOWER publicly positions these systems for sites with regular wet-waste generation and a clear need
+                for
+                cooking gas, thermal energy, or broader waste-to-energy recovery.
+            </p>
+
+            <div class="app-grid">
+                <div class="app-card">
+                    <span class="ac-icon">🍽️</span>
+                    <h4>Hotels & Restaurants</h4>
+                    <p>Convert kitchen and food waste into biogas that can be routed back into cooking or heating
+                        applications.</p>
+                </div>
+                <div class="app-card">
+                    <span class="ac-icon">🏥</span>
+                    <h4>Hospitals</h4>
+                    <p>Manage organic waste more systematically while improving fuel recovery and reducing disposal
+                        burden.</p>
+                </div>
+                <div class="app-card">
+                    <span class="ac-icon">🏢</span>
+                    <h4>Corporate Cafeterias</h4>
+                    <p>Turn cafeteria waste streams into usable energy with site-specific digestion and gas-handling
+                        design.</p>
+                </div>
+                <div class="app-card">
+                    <span class="ac-icon">🎓</span>
+                    <h4>Schools & Universities</h4>
+                    <p>Support campus sustainability goals by treating food waste on site and generating renewable
+                        biogas.</p>
+                </div>
+                <div class="app-card">
+                    <span class="ac-icon">🏭</span>
+                    <h4>Industries</h4>
+                    <p>Use engineered biogas systems for food waste, wet waste, and selected organic industrial
+                        residues.</p>
+                </div>
+                <div class="app-card">
+                    <span class="ac-icon">🏘️</span>
+                    <h4>Community Settings</h4>
+                    <p>Deploy community-scale waste-to-energy systems or connect segregated organic waste to larger
+                        conversion pathways.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spec Table -->
+        <section class="bp-section" style="padding-top:0;" data-aos="fade-up">
+            <div class="section-tag"><span></span>Published Institutional Sizes</div>
+            <h2 class="bp-section-title">Capacity & Area <span class="gradient-text">Reference Table</span></h2>
+            <p class="bp-section-sub">
+                These are the publicly listed institutional food-waste configurations. Final sizing should be confirmed
+                with BIOPOWER’s engineering team because feedstock profile, site conditions, and accessories affect the
+                final configuration.
+            </p>
+
+            <div class="spec-table-wrap">
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Sl.</th>
+                            <th>Food Waste Quantity (kg/day)</th>
+                            <th>Plant Capacity</th>
+                            <th>Digester / Gas Holder</th>
+                            <th>Space Required</th>
+                            <th>LPG Equivalent Output</th>
+                            <th>Accessories</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>125 – 150 kg</td>
+                            <td>25 m³</td>
+                            <td>RCC/MS digester &amp; MS fibre-coated gas holder</td>
+                            <td>5 m²</td>
+                            <td>10 – 12 kg/day</td>
+                            <td>Plant, connection tube, 2 canteen burners</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>200 – 250 kg</td>
+                            <td>50 m³</td>
+                            <td>RCC/MS digester &amp; MS fibre-coated gas holder</td>
+                            <td>7 m²</td>
+                            <td>20 – 22 kg/day</td>
+                            <td>Plant, connection tube, biogas pump, 3 canteen burners</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>200 – 250 kg</td>
+                            <td>25 m³</td>
+                            <td>RCC/MS digester &amp; MS fibre-coated gas holder</td>
+                            <td>6 m²</td>
+                            <td>15 – 17 kg/day</td>
+                            <td>Plant, connection tube, 3 HP crusher, biogas pump, 2 canteen burners</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>400 – 500 kg</td>
+                            <td>50 m³</td>
+                            <td>RCC/MS digester &amp; MS fibre-coated gas holder</td>
+                            <td>8 m²</td>
+                            <td>35 – 40 kg/day</td>
+                            <td>Plant, connection tube, 3 HP crusher, biogas pump, 3 canteen burners</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>1000 kg</td>
+                            <td>100 m³</td>
+                            <td>RCC digester &amp; MS fibre-coated gas holder</td>
+                            <td>10 m²</td>
+                            <td>60 – 70 kg/day</td>
+                            <td>Plant, connection tube, 3 HP crusher, biogas pump, 4 canteen burners</td>
+                        </tr>
+                        <tr class="note-row">
+                            <td colspan="7">
+                                Note: All listed capacities are food-waste-based reference values. Treat them as
+                                indicative
+                                and confirm final sizing, accessories, and layout with the concerned engineer before
+                                project finalization.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section class="bp-section" style="padding-top:0;" data-aos="fade-up">
+            <div class="section-tag"><span></span>Key Benefits</div>
+            <h2 class="bp-section-title">Why Institutions Choose <span class="gradient-text">Biogas Systems</span></h2>
+            <p class="bp-section-sub">
+                The value is not just waste treatment. Institutional and community biogas plants can improve energy
+                recovery,
+                reduce recurring disposal pressure, and create a usable byproduct stream.
+            </p>
+
+            <div class="benefits-strip">
+                <div class="benefit-tile">
+                    <div class="bt-icon">⚡</div>
+                    <div>
+                        <h4>On-site Energy Recovery</h4>
+                        <p>Convert biodegradable waste into usable biogas for cooking, heating, or broader energy
+                            applications.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-tile">
+                    <div class="bt-icon">💰</div>
+                    <div>
+                        <h4>Fuel Cost Reduction</h4>
+                        <p>Reduce dependence on purchased LPG or other conventional fuels through site-based energy
+                            generation.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-tile">
+                    <div class="bt-icon">🌍</div>
+                    <div>
+                        <h4>Lower Environmental Impact</h4>
+                        <p>Keep organic waste out of unmanaged disposal streams and support cleaner, decentralized waste
+                            treatment.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-tile">
+                    <div class="bt-icon">♻️</div>
+                    <div>
+                        <h4>Reusable Digestate</h4>
+                        <p>The digestion process also produces slurry or digestate that can be reused as a fertilizer
+                            output stream.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-tile">
+                    <div class="bt-icon">📈</div>
+                    <div>
+                        <h4>Indicative 16–20 Month Payback</h4>
+                        <p>The published institutional product page cites a 16–20 month payback period for suitable
+                            projects.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-tile">
+                    <div class="bt-icon">🧩</div>
+                    <div>
+                        <h4>Custom-Engineered Configurations</h4>
+                        <p>Plant sizing, feedstock handling, accessories, and downstream gas use can be configured
+                            around the site requirement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FAQs Section -->
+        <section id="faqs" class="faq-section" data-aos="fade-up">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <div class="section-tag"><span></span>Information</div>
+                    <h2 class="section-title">Frequently Asked <span class="gradient-text-1">Questions</span></h2>
+                    <p class="section-desc">
+                        These answers stay aligned with the publicly available BIOPOWER product and technical pages.
+                    </p>
+                </div>
+
+                <div class="faq-accordion" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is an institutional or community biogas plant?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                It is an anaerobic-digestion system designed to convert biodegradable waste into biogas
+                                and digestate,
+                                with the gas used for cooking, heat, power-related pathways, or further upgrading where
+                                applicable.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What feedstocks can be used?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                The public site directly references food waste, wet waste, restaurant waste, cafeteria
+                                waste,
+                                hospital waste, school waste, farm waste, and supermarket waste, with broader technical
+                                references
+                                to additional organic and agricultural residues.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What plant sizes are publicly listed?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                For institutional food-waste applications, the published range covers 25 m³, 50 m³, and
+                                100 m³
+                                plant configurations, linked to waste inputs from 125–150 kg/day up to 1000 kg/day.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What performance figures can be safely published?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                The strongest published figures are LPG-equivalent output for institutional models,
+                                along with wider
+                                technical metrics for gas upgrading and methane purity. Direct biogas yield per kilogram
+                                of waste is
+                                not specified on the public institutional page.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are community plants also custom-designed?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Yes. The public material treats community and institutional systems as part of the same
+                                solution family,
+                                so final sizing and layout should be based on project-specific engineering review.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can BIOPOWER help with project planning?</h3>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Yes. The company’s broader public offering includes feasibility studies, DPR
+                                preparation, capacity
+                                planning, technology selection, and regulatory support for suitable biogas and Bio-CNG
+                                projects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-banner" data-aos="fade-up">
+            <h2>Ready to Evaluate an Institutional or Community Biogas Project?</h2>
+            <p>
+                Get a site-specific assessment from BIOPOWER based on your waste volume, footprint, feedstock profile,
+                and energy demand. The right configuration depends on your project conditions, not just a standard
+                model.
+            </p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn btn-white magnetic">
+                    <span>Request a Site Assessment</span>
+                </a>
+                <a href="index.html" class="btn btn-outline-white magnetic">
+                    <span>Explore All Products</span>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand" data-aos="fade-up" data-aos-delay="0">
+                    <a href="#" class="logo footer-logo-container">
+                        <img src="images/biopower-logo.png" alt="BioPower Logo" class="logo-img footer-logo">
+                    </a>
+                    <p>
+                        BIOPOWER is a waste-to-energy solutions provider focused on converting organic waste into
+                        renewable
+                        energy through biogas and related treatment technologies.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" class="magnetic">Home</a></li>
+                        <li><a href="about.html" class="magnetic">About Us</a></li>
+                        <li><a href="index.html#products" class="magnetic">Products</a></li>
+                        <li><a href="contact.html" class="magnetic">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="biogas_plant.html" class="magnetic">Portable Biogas Plants</a></li>
+                        <li><a href="inst_comun.html" class="magnetic">Institutional Biogas Plants</a></li>
+                        <li><a href="cbg.html" class="magnetic">Bio-CNG Systems</a></li>
+                        <li><a href="stp.html" class="magnetic">Sewage Treatment Plants</a></li>
+                        <li><a href="contact.html" class="magnetic">Installation & Support</a></li>
+                        <li><a href="contact.html" class="magnetic">Engineering Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>info@biopower.co.in</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <span>+91-8031194751</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span>BPG Renewables Pvt Ltd<br>No. 26, 5th Cross, Hennur Main Road,<br>Kacharakanahalli,
+                            Bengaluru, Karnataka 560084</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 BIOPOWER. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
