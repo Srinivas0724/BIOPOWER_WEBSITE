@@ -5,11 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact BIOPOWER - Get a Sustainable Waste-to-Energy Quote</title>
+    <link rel="icon" type="image/png" href="images/biopower-logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
+        // =============================================
+        // IMPORTANT: Paste your Apps Script Web App URL below
+        // =============================================
+        var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyaNzfM6QTpu2cKKWLm6pHFod4OpZ2fTuAJhCSfJ9Yqll8ajKOY6A6oh5NNV54vJGlx1w/exec";
+        // =============================================
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('contactInquiryForm');
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var btn = form.querySelector('button[type="submit"]');
+                var span = btn.querySelector('span');
+
+                // Basic validation
+                if (APPS_SCRIPT_URL === "YOUR_APPS_SCRIPT_WEB_APP_URL_HERE") {
+                    alert("Please set your Apps Script URL in contact.html");
+                    return;
+                }
+
+                // Collect form values
+                var inputs = form.querySelectorAll('input, select, textarea');
+                var selects = form.querySelectorAll('select');
+                var fields = {};
+
+                // Named inputs/textareas
+                form.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"]').forEach(function (el, i) {
+                    var ph = el.getAttribute('placeholder') || '';
+                    if (ph.includes('Name')) fields.name = el.value;
+                    if (ph.includes('Phone')) fields.phone = el.value;
+                    if (ph.includes('Email')) fields.email = el.value;
+                    if (ph.includes('Company')) fields.company = el.value;
+                    if (ph.includes('Location')) fields.location = el.value;
+                    if (ph.includes('Waste')) fields.wasteQty = el.value;
+                });
+                fields.requirement = selects[0] ? selects[0].value : '';
+                fields.projectType = selects[1] ? selects[1].value : '';
+                fields.message = (form.querySelector('textarea') || {}).value || '';
+
+                // Loading state
+                btn.disabled = true;
+                span.textContent = 'Sending…';
+
+                fetch(APPS_SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(fields)
+                })
+                    .then(function (r) { return r.json(); })
+                    .then(function (data) {
+                        if (data.result === 'success') {
+                            span.textContent = '✓ Request Sent!';
+                            btn.style.background = '#22c55e';
+                            form.reset();
+                            setTimeout(function () {
+                                span.textContent = 'Request Consultation';
+                                btn.style.background = '';
+                                btn.disabled = false;
+                            }, 4000);
+                        } else {
+                            throw new Error(data.message || 'Submission failed');
+                        }
+                    })
+                    .catch(function (err) {
+                        span.textContent = 'Error – Try Again';
+                        btn.style.background = '#e63946';
+                        btn.disabled = false;
+                        console.error('Form error:', err);
+                        setTimeout(function () {
+                            span.textContent = 'Request Consultation';
+                            btn.style.background = '';
+                        }, 3000);
+                    });
+            });
+        });
+
         // Preloader Logic
         function removePreloader() {
             const preloader = document.querySelector('.preloader');
