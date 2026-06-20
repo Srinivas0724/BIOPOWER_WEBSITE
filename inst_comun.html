@@ -508,34 +508,6 @@
         }
     </style>
 
-    <script>
-        function removePreloader() {
-            const preloader = document.querySelector('.preloader');
-            if (preloader && !preloader.classList.contains('hidden')) {
-                preloader.classList.add('hidden');
-                setTimeout(() => { preloader.style.display = 'none'; }, 1000);
-            }
-        }
-
-        window.addEventListener('load', () => {
-            setTimeout(removePreloader, 1500);
-        });
-
-        setTimeout(removePreloader, 2500);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof AOS !== 'undefined') {
-                AOS.init({ duration: 1000, once: true });
-            }
-
-            setTimeout(() => {
-                document.querySelectorAll('[data-aos]').forEach(el => {
-                    el.style.opacity = '1';
-                    el.style.transform = 'none';
-                });
-            }, 3000);
-        });
-    </script>
     <!-- ===== JSON-LD STRUCTURED DATA (managed) ===== -->
     <script type="application/ld+json">
 {
@@ -651,12 +623,12 @@ gtag('config', 'G-KT48H7F23D');
                             </ul>
                         </li>
                         <li><a href="https://synodmart.com" class="nav-link magnetic" data-text="Shop">Shop</a></li>
-                        <li><a href="index.html#faqs" class="nav-link magnetic" data-text="FAQs">FAQs</a></li>
+                        <li><a href="faq.html" class="nav-link magnetic" data-text="FAQs">FAQs</a></li>
                         <li><a href="blog/index.html" class="nav-link magnetic" data-text="Blog">Blog</a></li>
                         <li><a href="contact.html" class="nav-link magnetic" data-text="Contact">Contact</a></li>
                     </ul>
                 </div>
-                <a href="contact.html" class="btn btn-primary magnetic">Request Quote</a>
+                <a href="contact.html" class="btn btn-primary magnetic" data-track="request_quote">Request Quote</a>
                 <div class="hamburger">
                     <span></span><span></span><span></span>
                 </div>

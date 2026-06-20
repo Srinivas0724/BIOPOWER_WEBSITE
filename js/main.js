@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (scrollY >= sectionTop - 200) {
+            if (window.scrollY >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
         });
@@ -369,27 +369,60 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ==========================================
-    // Contact Form Submission
+    // GA4 Conversion Event Tracking
     // ==========================================
-    const contactForm = document.getElementById('contactInquiryForm');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const btn = this.querySelector('button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<span>Sending...</span>';
-            btn.style.opacity = '0.7';
-
-            setTimeout(() => {
-                alert('Thank you! Your inquiry has been sent to the BIOPOWER expert team.');
-                btn.innerHTML = originalText;
-                btn.style.opacity = '1';
-                contactForm.reset();
-            }, 1500);
-        });
+    function trackGa4Event(eventName, params) {
+        if (typeof gtag === 'function') {
+            gtag('event', eventName, params || {});
+        }
     }
 
-    console.log('🚀 BIO POWER Scripts Loaded Successfully!');
+    document.querySelectorAll('[data-track="request_quote"]').forEach(el => {
+        el.addEventListener('click', () => {
+            trackGa4Event('request_quote', {
+                event_category: 'conversion',
+                event_label: el.textContent.trim().slice(0, 80) || 'Request Quote',
+                page_path: window.location.pathname
+            });
+        });
+    });
+
+    document.querySelectorAll('[data-track="phone_click"], a[href^="tel:"]').forEach(el => {
+        el.addEventListener('click', () => {
+            trackGa4Event('phone_call', {
+                event_category: 'conversion',
+                event_label: el.getAttribute('href') || el.textContent.trim(),
+                page_path: window.location.pathname
+            });
+        });
+    });
+
+    document.querySelectorAll('[data-track="email_click"], a[href^="mailto:"]').forEach(el => {
+        el.addEventListener('click', () => {
+            trackGa4Event('email_click', {
+                event_category: 'conversion',
+                event_label: el.getAttribute('href') || el.textContent.trim(),
+                page_path: window.location.pathname
+            });
+        });
+    });
+
+    document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], a[href*="api.whatsapp"]').forEach(el => {
+        el.addEventListener('click', () => {
+            trackGa4Event('whatsapp_click', {
+                event_category: 'conversion',
+                event_label: el.getAttribute('href'),
+                page_path: window.location.pathname
+            });
+        });
+    });
+
+    window.biopowerTrackFormSubmit = function () {
+        trackGa4Event('contact_form_submit', {
+            event_category: 'conversion',
+            event_label: 'Contact Form Success',
+            page_path: window.location.pathname
+        });
+    };
 
 }); 

@@ -82,11 +82,15 @@
 
                 fetch(APPS_SCRIPT_URL, {
                     method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                     body: JSON.stringify(fields)
                 })
                     .then(function (r) { return r.json(); })
                     .then(function (data) {
                         if (data.result === 'success') {
+                            if (typeof window.biopowerTrackFormSubmit === 'function') {
+                                window.biopowerTrackFormSubmit();
+                            }
                             span.textContent = '✓ Request Sent!';
                             btn.style.background = '#22c55e';
                             form.reset();
@@ -110,28 +114,6 @@
                         }, 3000);
                     });
             });
-        });
-
-        // Preloader Logic
-        function removePreloader() {
-            const preloader = document.querySelector('.preloader');
-            if (preloader && !preloader.classList.contains('hidden')) {
-                preloader.classList.add('hidden');
-                setTimeout(() => { preloader.style.display = 'none'; }, 1000);
-            }
-        }
-
-        window.addEventListener('load', () => {
-            setTimeout(removePreloader, 1500);
-        });
-
-        // Failsafe to prevent stuck loading
-        setTimeout(removePreloader, 2500);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof AOS !== 'undefined') {
-                AOS.init({ duration: 1000, once: true });
-            }
         });
     </script>
     <!-- ===== JSON-LD STRUCTURED DATA (managed) ===== -->
@@ -277,12 +259,12 @@ gtag('config', 'G-KT48H7F23D');
                             </ul>
                         </li>
                         <li><a href="https://synodmart.com" class="nav-link magnetic" data-text="Shop">Shop</a></li>
-                        <li><a href="index.html#faqs" class="nav-link magnetic" data-text="FAQs">FAQs</a></li>
+                        <li><a href="faq.html" class="nav-link magnetic" data-text="FAQs">FAQs</a></li>
                         <li><a href="blog/index.html" class="nav-link magnetic" data-text="Blog">Blog</a></li>
                         <li><a href="contact.html" class="nav-link magnetic" data-text="Contact">Contact</a></li>
                     </ul>
                 </div>
-                <a href="contact.html" class="btn btn-primary magnetic">Request Quote</a>
+                <a href="contact.html" class="btn btn-primary magnetic" data-track="request_quote">Request Quote</a>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
