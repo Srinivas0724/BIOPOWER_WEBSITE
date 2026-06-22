@@ -232,11 +232,6 @@ function localBusinessSchema(extra = {}) {
     },
     geo: { '@type': 'GeoCoordinates', latitude: 13.020937, longitude: 77.634512 },
     areaServed: ['India', 'Karnataka', 'Bengaluru'],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: BRAND.reviewCount,
-    },
     ...extra,
   };
 }

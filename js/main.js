@@ -193,15 +193,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ==========================================
-    // Parallax Effect for Hero Video
+    // Hero video / poster — parallax + optional lazy MP4
     // ==========================================
     const heroVideo = document.querySelector('.hero-video');
 
     if (heroVideo) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            heroVideo.style.transform = `translateY(${scrolled * 0.5}px)`;
-        });
+        if (heroVideo.tagName === 'VIDEO') {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                heroVideo.style.transform = `translateY(${scrolled * 0.5}px)`;
+            });
+
+            const source = heroVideo.querySelector('source[data-src]');
+            if (source) {
+                const loadHeroVideo = () => {
+                    source.src = source.getAttribute('data-src');
+                    source.removeAttribute('data-src');
+                    heroVideo.load();
+                    heroVideo.play().catch(function () { });
+                };
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadHeroVideo, { timeout: 2500 });
+                } else {
+                    setTimeout(loadHeroVideo, 600);
+                }
+            }
+        }
     }
 
     // ==========================================
@@ -369,27 +386,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ==========================================
-    // Hero Video — lazy load self-hosted MP4
-    // ==========================================
-    const heroVideo = document.querySelector('.hero-video');
-    if (heroVideo) {
-        const source = heroVideo.querySelector('source[data-src]');
-        if (source) {
-            const loadHeroVideo = () => {
-                source.src = source.getAttribute('data-src');
-                source.removeAttribute('data-src');
-                heroVideo.load();
-                heroVideo.play().catch(function () { });
-            };
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(loadHeroVideo, { timeout: 2500 });
-            } else {
-                setTimeout(loadHeroVideo, 600);
-            }
-        }
-    }
-
-    // ==========================================
     // GA4 Conversion Event Tracking
     // ==========================================
     function trackGa4Event(eventName, params) {
@@ -428,11 +424,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], a[href*="api.whatsapp"]').forEach(el => {
+    document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"], a[href*="api.whatsapp"], [data-track="whatsapp_click"]').forEach(el => {
         el.addEventListener('click', () => {
             trackGa4Event('whatsapp_click', {
                 event_category: 'conversion',
-                event_label: el.getAttribute('href'),
+                event_label: el.getAttribute('href') || el.textContent.trim(),
                 page_path: window.location.pathname
             });
         });

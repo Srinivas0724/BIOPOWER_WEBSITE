@@ -3,7 +3,8 @@ module.exports = {
   years: '17+',
   installations: '12,898+',
   rating: '4.9/5',
-  reviewCount: '5000',
+  reviewCount: '5000', // display/marketing only — NOT used in schema (see Phase 5)
+  schemaReviewCount: null,
   founded: '2006',
   capacityRange: '1 kg/day to 100 metric tons/day',
   phone: '+91 73381 29464',

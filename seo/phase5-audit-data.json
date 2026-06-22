@@ -1,0 +1,437 @@
+{
+  "aggregateRatingRemoved": [
+    "bio-cng-plant-karnataka.html",
+    "biogas-plant-for-apartments.html",
+    "biogas-plant-for-colleges.html",
+    "biogas-plant-for-hotels.html",
+    "biogas-plant-karnataka.html",
+    "biogas_plant.html",
+    "case-studies/apartment-owc-case-study.html",
+    "case-studies/hotel-biogas-case-study.html",
+    "case-studies/institutional-biogas-case-study.html",
+    "case-studies/stp-installation-case-study.html",
+    "cbg-for-food-processing-industry.html",
+    "cbg.html",
+    "contact.html",
+    "faq.html",
+    "index.html",
+    "inst_comun.html",
+    "organic-waste-converter-for-apartments.html",
+    "organic-waste-converter-for-hotels.html",
+    "organic-waste-converter-karnataka.html",
+    "owc-for-apartments.html",
+    "owc-for-hotels.html",
+    "owc.html",
+    "resources.html",
+    "stp-for-apartments.html",
+    "stp-for-industries.html",
+    "stp-plant-karnataka.html",
+    "stp.html",
+    "scripts/phase3-shared.js"
+  ],
+  "ga4Fixes": [
+    "contact.html: WhatsApp link added",
+    "index.html: WhatsApp CTA added"
+  ],
+  "indexability": [
+    {
+      "url": "/about.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/bio-cng-plant-bangalore.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/bio-cng-plant-karnataka.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/biogas-plant-bangalore.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/biogas-plant-for-apartments.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/biogas-plant-for-colleges.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/biogas-plant-for-hotels.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/biogas-plant-karnataka.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/biogas_plant.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/apartment-composting-guide.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/benefits-of-biogas-plants.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/bio-cng-business-opportunities-india.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/biogas-plant-cost-in-india.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/biogas-plant-subsidy-karnataka.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/biogas-plants.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/commercial-biogas-plant-guide.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/commercial-composting-solutions.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/composting-vs-biogas.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/food-waste-management.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/food-waste-to-energy-guide.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/government-subsidies-for-biogas-plants.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/hotel-waste-management-guide.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/how-biogas-plants-work.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/how-stp-works.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/index.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/industrial-stp-design-guide.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/industrial-stp-guide.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/organic-waste-converter.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/organic-waste-management.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/owc-machine-cost.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/sewage-treatment.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/stp-cost-in-india.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/wastewater-treatment-technologies.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/blog/water-recycling-methods.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/case-studies/apartment-owc-case-study.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/case-studies/hotel-biogas-case-study.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/case-studies/institutional-biogas-case-study.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/case-studies/stp-installation-case-study.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/cbg-for-food-processing-industry.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/cbg.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/contact.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/faq.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/inst_comun.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/organic-waste-converter-bangalore.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/organic-waste-converter-for-apartments.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/organic-waste-converter-for-hotels.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/organic-waste-converter-karnataka.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/owc-for-apartments.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/owc-for-hotels.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/owc.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/resources.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/stp-for-apartments.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/stp-for-industries.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/stp-plant-bangalore.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/stp-plant-karnataka.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    },
+    {
+      "url": "/stp.html",
+      "indexable": "Yes",
+      "canonicalValid": "Yes",
+      "inSitemap": "Yes",
+      "issues": "none"
+    }
+  ]
+}
