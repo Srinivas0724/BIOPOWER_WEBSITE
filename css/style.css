@@ -393,6 +393,17 @@ body:hover .cursor {
     object-fit: cover;
 }
 
+.hero-video-poster {
+    background: url('../images/plants/institutional-biogas-plant.webp') center/cover no-repeat;
+    animation: heroKenBurns 22s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes heroKenBurns {
+    from { transform: scale(1); }
+    to { transform: scale(1.06); }
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;

@@ -11,17 +11,17 @@ const {
 
 const ROOT = path.join(__dirname, '..');
 const HERO = {
-  biogas: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=1740&auto=format&fit=crop',
-  owc: 'https://images.unsplash.com/photo-1582560475093-ba66accbc424?q=80&w=1740&auto=format&fit=crop',
-  stp: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=1740&auto=format&fit=crop',
-  cbg: 'https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&w=1740&auto=format&fit=crop',
-  hotel: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1740&auto=format&fit=crop',
-  apartment: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1740&auto=format&fit=crop',
-  college: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1740&auto=format&fit=crop',
-  industry: 'https://images.unsplash.com/photo-1581091226825-a6a2a5a15815?q=80&w=1740&auto=format&fit=crop',
-  food: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1740&auto=format&fit=crop',
-  resources: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1740&auto=format&fit=crop',
-  faq: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1740&auto=format&fit=crop',
+  biogas: 'images/plants/institutional-biogas-plant.webp',
+  owc: 'images/plants/Fully Autoimatic.webp',
+  stp: 'images/plants/institutional-biogas-plant.webp',
+  cbg: 'images/plants/6cum/Aerial view of green biogas digester.webp',
+  hotel: 'images/wonderbin_roof_top.webp',
+  apartment: 'images/wonderbin_roof_top.webp',
+  college: 'images/plants/institutional-biogas-plant.webp',
+  industry: 'images/plants/institutional-biogas-plant.webp',
+  food: 'images/plants/Fully Autoimatic.webp',
+  resources: 'images/plants/institutional-biogas-plant.webp',
+  faq: 'images/biopower-logo.webp',
 };
 const PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
 

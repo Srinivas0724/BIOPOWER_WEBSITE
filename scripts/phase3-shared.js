@@ -194,7 +194,7 @@ function footerHtml(depth) {
         </div>
         <div class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>BPG Renewables Pvt Ltd, Bengaluru, Karnataka 560084</span>
+          <span>BIOPOWER (BPG Renewables Pvt Ltd)<br>2nd Floor, 26, 5th Cross, Off Hennur Road, Kacharakanahalli,<br>Bengaluru, Karnataka 560084</span>
         </div>
       </div>
     </div>
@@ -230,7 +230,7 @@ function localBusinessSchema(extra = {}) {
       postalCode: '560084',
       addressCountry: 'IN',
     },
-    geo: { '@type': 'GeoCoordinates', latitude: 13.0264, longitude: 77.635 },
+    geo: { '@type': 'GeoCoordinates', latitude: 13.020937, longitude: 77.634512 },
     areaServed: ['India', 'Karnataka', 'Bengaluru'],
     aggregateRating: {
       '@type': 'AggregateRating',

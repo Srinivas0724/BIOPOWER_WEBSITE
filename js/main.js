@@ -369,6 +369,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ==========================================
+    // Hero Video — lazy load self-hosted MP4
+    // ==========================================
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+        const source = heroVideo.querySelector('source[data-src]');
+        if (source) {
+            const loadHeroVideo = () => {
+                source.src = source.getAttribute('data-src');
+                source.removeAttribute('data-src');
+                heroVideo.load();
+                heroVideo.play().catch(function () { });
+            };
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadHeroVideo, { timeout: 2500 });
+            } else {
+                setTimeout(loadHeroVideo, 600);
+            }
+        }
+    }
+
+    // ==========================================
     // GA4 Conversion Event Tracking
     // ==========================================
     function trackGa4Event(eventName, params) {
